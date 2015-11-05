@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OnlineSticker</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+     <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+       </li>
+   
+
+                <li><%= link_to "sign_in", new_user_session_path() %></li>
+   <li>
+          <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+        </li>
+     
+
+   <li><%= link_to "Seller Sign up",  new_user_registration_path(:role => "seller") %></li>
+       <li><%= link_to "ASign up",  new_user_registration_path(:role => "buyer") %></li>
+               
+ 
+  
+ 
+
+<%= yield %>
+
+</body>
+</html>
