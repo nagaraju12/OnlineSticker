@@ -17,15 +17,7 @@
    <li>
           <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
         </li>
-     
-
-   <li><%= link_to "Seller Sign up",  new_user_registration_path(:role => "seller") %></li>
-       <li><%= link_to "ASign up",  new_user_registration_path(:role => "buyer") %></li>
-               
- 
-  
- 
-
+        <li><%= link_to "sign_up", new_user_registration_path() %></li>
 <%= yield %>
 
 </body>
