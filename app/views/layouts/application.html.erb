@@ -8,16 +8,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-     <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-       </li>
-   
+     <nav id ="nav">
+<div id= "page_nav" >
 
-                <li><%= link_to "sign_in", new_user_session_path() %></li>
-   <li>
-          <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
-        </li>
-        <li><%= link_to "sign_up", new_user_registration_path() %></li>
+     <%= link_to 'Home',   new_user_registration_path %>
+     <%= link_to 'About Us', root_path %>
+     <%= link_to 'Cart',  root_path %>
+    <%= link_to 'Contact Us', root_path %>
+     </div>
+<div id= "sign_in" >
+<% if user_signed_in? %>
+
+<%#= link_to 'Account', edit_user_registration_path %>
+
+<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+<% else %>
+<%= link_to 'Sign up', new_user_registration_path %>
+<%= link_to 'Sign in', new_user_session_path %>
+<% end %>
+</div>
+</nav>
+
+
+
+<div id= "main_wrap" >
+  <p class="notice"><%= notice %></p>
 <%= yield %>
 
 </body>

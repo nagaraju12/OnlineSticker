@@ -13,6 +13,6 @@ default: &default
 
 development:
   <<: *default
-  database: OnlineSticker_development
+  database: onlineSticker_development
 
 
