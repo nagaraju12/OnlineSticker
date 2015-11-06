@@ -19,11 +19,11 @@ def after_sign_in_path_for(resource_or_scope)
     if resource_or_scope.is_a?(User)
       flash[:success] = "You have successfully logged in."
       if current_user.role == 'user'
-       stickers_path()
+         root_path()
       elsif current_user.role == 'admin'
          new_sticker_path()
        else
-       welcome_index_path()
+         root_path()
       end
    end
  end

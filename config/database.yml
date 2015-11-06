@@ -1,31 +1,25 @@
 development:
-
-  <<: *default
-  database: onlineSticker_development
-
   adapter: mysql2
   encoding: utf8
-  database: OnlineSticker_development
+  database: OnlineSticker1_development
   pool: 5
   username: root
-  
+
   password: root
 
 
 test:
-  development:
   adapter: mysql2
   encoding: utf8
-  database: OnlineSticker_test
+  database: OnlineSticker1_test
   pool: 5
   username: root
   password: root
 
 production:
- development:
   adapter: mysql2
   encoding: utf8
-  database: OnlineSticker_production
+  database: OnlineSticker1_production
   pool: 5
   username: root
   password: root
