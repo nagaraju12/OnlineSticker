@@ -4,7 +4,6 @@ development:
   database: OnlineSticker1_development
   pool: 5
   username: root
-
   password: root
 
 
@@ -22,5 +21,4 @@ production:
   database: OnlineSticker1_production
   pool: 5
   username: root
-  password: root
-  
+  password: root  

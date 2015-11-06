@@ -6,6 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Category.find_or_create_by(:name => "Bed")
+<<<<<<< HEAD
+=======
+
+Category.find_or_create_by(:name => "Curtains")
+Category.find_or_create_by(:name => "Table")
+>>>>>>> 48d71a478b13fca2e37add7a659f33a9ffabec20
 
 Category.find_or_create_by(:name => "Curtains")
 Category.find_or_create_by(:name => "Table")
