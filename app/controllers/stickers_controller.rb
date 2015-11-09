@@ -1,10 +1,12 @@
 class StickersController < ApplicationController
-
+before_filter :is_login?
 	def index
 		@stickers= Sticker.all
+		@banners= Banner.all
 	end
 
 	def new
+		
 		@sticker= Sticker.new
 	1.times{@sticker.images.build}
 	end

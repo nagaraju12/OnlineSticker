@@ -1,10 +1,13 @@
 class ContactsController < ApplicationController
+
 		def index
 		@contacts= Contact.all
+		@banners= Banner.all
 	end
 
 	def new
 		@contact= Contact.new
+
 	end
 
 	def create

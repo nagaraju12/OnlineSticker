@@ -1,0 +1,23 @@
+ <ul class="bxslider" i>
+<% @stickers.each do |i| %>
+<% for image in i.images %>
+
+<li><%= image_tag(image.image.url, :height => 300, :width =>600) %></li>
+<%= i.name %>
+       <%= i.description %>
+        <%= i.price %>
+<% end %>
+<% end %>
+
+</ul>
+<script >
+$('.bxslider').bxSlider({
+   slideWidth: 300,
+    minSlides: 2,
+    maxSlides: 4,
+    startSlide: 2,
+  ticker: true,
+  speed: 30000
+});
+
+</script>

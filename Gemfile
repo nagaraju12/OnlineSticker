@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 gem "paperclip"
 gem "nested_form"
 gem 'devise'
-
+gem 'bxslider-rails'
 gem 'rails', '4.2.4'
 gem 'mysql2'
 gem 'sass-rails', '~> 5.0'

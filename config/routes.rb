@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 resources :contacts
-
+resources :banners
  resources :categories
  root 'welcome#index'
   resources :stickers do
@@ -13,5 +13,5 @@ resources :contacts
   end
 end
 
- 
+ get "/about", :to => "welcome#about"
 end

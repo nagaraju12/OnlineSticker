@@ -11,12 +11,13 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require bxslider
  *= require_self
  */
 
 *{
-	margin: 0;
-	padding: 0;
+	margin: 12;
+	padding: 12;
 }
 
 #nav{
@@ -33,7 +34,12 @@
 	text-decoration: none;
 
 }
-
+#element {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 346px;
+}
 #page_nav{
 	margin:0 0 0 5%;
 	float: left;

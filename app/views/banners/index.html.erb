@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+<h1>Listing Banners</h1>
+
+<table >
+  <thead>
+    <tr>
+      <th>Name</th>
+      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @banners.each do |banner| %>
+      <tr>
+        <td><%= banner.name %></td>
+        <td><% banner.images.each do |image| %>
+<%= image_tag image.image %></td>
+<% end %>
+        <td><%= link_to 'Show', banner %></td>
+        <td><%= link_to 'Edit', edit_banner_path(banner) %></td>
+        <td><%= link_to 'Destroy', banner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<%= button_to "new banner", new_banner_path, :class => "button", :method => :get  %>

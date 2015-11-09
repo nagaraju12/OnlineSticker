@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <h1>Listing Stickers</h1>
 
-<table class="table table-bordered table-striped">
+<table >
   <thead>
     <tr>
     <th>Category</th>
@@ -20,8 +20,8 @@
         <td><%= sticker.name %></td>
         <td><%= sticker.description %></td>
         <td><%= sticker.price %></td>
-        <td><% sticker.images.each do |image| %></td>
-<td><%= image_tag image.image %></td>
+        <td><% sticker.images.each do |image| %>
+<%= image_tag image.image %></td>
 <% end %>
         <td><%= link_to 'Show', sticker %></td>
         <td><%= link_to 'Edit', edit_sticker_path(sticker) %></td>

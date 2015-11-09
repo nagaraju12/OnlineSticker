@@ -9,15 +9,16 @@
 </head>
 <body>
 
-     <nav id ="nav">
-
+  <nav id ="nav">
+ </div>         
 <div id= "page_nav" >
      <%= link_to 'Home',   root_path %>
-     <%= link_to 'About Us', root_path %>
-    <%= link_to "Sticker",  listing_stickers_path, :remote => true %>
-  <%= link_to 'contact',   contacts_path %>
+     <%= link_to 'About Us',  about_path %>
+  <%#= link_to "Sticker",  listing_stickers_path, :remote => true %>
+  <%= link_to 'contact',   new_contact_path %>
+<%= link_to "sticker", new_sticker_path %>
      </div>
-    
+     
 <div id= "sign_in" >
 <% if user_signed_in? %>
 
@@ -32,14 +33,12 @@
 </nav>
 <div id= "main_wrap" >
   <p class="notice"><%= notice %></p>
+
 <%= yield %>
  <div id="sticker_all"></div>
 <div id= "footer" >
-<div class="copyright">
-      Copyright © 2015 OnlineSticker.com. All rights reserved.
-    </div>
-    <div class="clearFix"></div>
-  </div>
+
+   
 </footer>
 </body>
 </html>
