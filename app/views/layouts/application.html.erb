@@ -13,8 +13,10 @@
  </div> 
 
 <div id= "page_nav" >
-     <%= link_to 'Home',   '#' %>
-   <%= link_to "dashboard", dashboards_index_path %>
+     <%= link_to 'Home',   root_path %>
+  <%= link_to 'About_us', about_path %> 
+<%= link_to 'Contact_us', contacts_path %>
+<%= link_to 'Stickers', stickers_path %>
   <%#= link_to "Sticker",  listing_stickers_path, :remote => true %>
  
      </div>
@@ -22,8 +24,8 @@
      
 <div id= "sign_in" >
 <% if user_signed_in? %>
-
 <%#= link_to 'Account', edit_user_registration_path %>
+<%= link_to 'Dashboard', dashboards_index_path %>
 
 <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
 <% else %>

@@ -3,9 +3,9 @@
 
 <% for image in i.images %>
 
-<li><%= image_tag(image.image.url, :height => 250, :width =>500) %>
+<li><%=link_to  image_tag(image.image.url, :height => 250, :width =>500), stickers_path %>
 Name:<%= i.name %><br>
-    price:$<%= i.price %></li>
+Price:$<%= i.price %></li>
       
 <% end %>
 <% end %>
