@@ -1,13 +1,13 @@
 class StickersController < ApplicationController
 before_filter :is_login?
+
 	def index
 		@stickers= Sticker.all
 		@banners= Banner.all
 	end
 
 	def new
-		
-		@sticker= Sticker.new
+@sticker= Sticker.new
 	1.times{@sticker.images.build}
 	end
 
@@ -16,7 +16,7 @@ before_filter :is_login?
 		1.times{@sticker.images.build} if @sticker.images.blank?
 		if @sticker.save
 
-			redirect_to @sticker
+			redirect_to @sticker, :notice => "Successfully created sticker."
 			
 		else
 			render "new"
@@ -54,7 +54,10 @@ before_filter :is_login?
       format.js
     end
   end
-
+def dashboard
+ @stickers= Sticker.all
+ @contacts= Contact.all
+end
 private
 
 def sticker_params

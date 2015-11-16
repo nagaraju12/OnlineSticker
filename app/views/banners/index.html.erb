@@ -14,7 +14,7 @@
     <% @banners.each do |banner| %>
       <tr>
         <td><%= banner.name %></td>
-        <td><% banner.images.each do |image| %>
+        <td><% banner.images do |image| %>
 <%= image_tag image.image %></td>
 <% end %>
         <td><%= link_to 'Show', banner %></td>

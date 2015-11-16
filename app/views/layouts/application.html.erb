@@ -10,20 +10,21 @@
 <body>
 
   <nav id ="nav">
- </div>         
+ </div> 
+
 <div id= "page_nav" >
      <%= link_to 'Home',   root_path %>
-     <%= link_to 'About Us',  about_path %>
+   <%= link_to "dashboard", dashboards_index_path %>
   <%#= link_to "Sticker",  listing_stickers_path, :remote => true %>
-  <%= link_to 'contact',   new_contact_path %>
-<%= link_to "sticker", new_sticker_path %>
+ 
      </div>
+
      
 <div id= "sign_in" >
 <% if user_signed_in? %>
 
 <%#= link_to 'Account', edit_user_registration_path %>
-<%= link_to 'sticker',   stickers_path %>
+
 <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
 <% else %>
 <%= link_to 'Sign up', new_user_registration_path %>
@@ -31,10 +32,11 @@
 <% end %>
 </div>
 </nav>
+
 <div id= "main_wrap" >
-  <p class="notice"><%= notice %></p>
 
 <%= yield %>
+
  <div id="sticker_all"></div>
 <div id= "footer" >
 

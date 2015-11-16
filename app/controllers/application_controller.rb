@@ -22,7 +22,7 @@ def after_sign_in_path_for(resource_or_scope)
       if current_user.role == 'user'
          root_path()
       elsif current_user.role == 'admin'
-         stickers_path()
+         dashboards_index_path()
        else
          root_path()
       end

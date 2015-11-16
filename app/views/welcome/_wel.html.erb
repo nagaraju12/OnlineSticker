@@ -1,16 +1,16 @@
 <ul class="bxslider" i>
 <% @banners.each do |i| %>
 <% for image in i.images %>
-<li><%= image_tag(image.image.url, :height => 400, :width =>1200) %></li>
+<li><%= image_tag(image.image.url, :height => 400, :width =>1200) %>
+<h1><%= i.name %></h1></li>
 <% end %>
 <% end %>
 
 </ul>
 <script >
 $('.bxslider').bxSlider({
-  infiniteLoop: false,
-  hideControlOnEnd: true
-   
+  auto: true,
+  autoControls: true
 });
 
 </script>
