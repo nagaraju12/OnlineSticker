@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
-<h1>Listing Banners</h1>
+<h1><%= link_to '+New Banner', new_banner_path %></h1>
 
-<table >
+<table class="table table-bordered table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -14,8 +14,8 @@
     <% @banners.each do |banner| %>
       <tr>
         <td><%= banner.name %></td>
-        <td><% banner.images do |image| %>
-<%= image_tag image.image %></td>
+     <% banner.images do |image| %>
+<td><%= image_tag image.image %></td>
 <% end %>
         <td><%= link_to 'Show', banner %></td>
         <td><%= link_to 'Edit', edit_banner_path(banner) %></td>
@@ -28,4 +28,4 @@
 <br>
 
 
-<%= button_to "new banner", new_banner_path, :class => "button", :method => :get  %>
+<%#= button_to "new banner", new_banner_path, :class => "button", :method => :get  %>

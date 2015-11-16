@@ -54,10 +54,7 @@ before_filter :is_login?
       format.js
     end
   end
-def dashboard
- @stickers= Sticker.all
- @contacts= Contact.all
-end
+
 private
 
 def sticker_params
