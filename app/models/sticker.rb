@@ -6,3 +6,10 @@ validates :name, :description, :price,  :category_id, presence: true
 	accepts_nested_attributes_for :images, :allow_destroy => true, :reject_if=>:all_blank
 has_attached_file :image, styles: { medium: "100x100>", thumb: "100x100>"  }
 end
+def self.search(search)
+  if search
+    find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+  else
+    find(:all)
+  end
+end

@@ -11,7 +11,7 @@ resources :banners
   resources :stickers do
     collection do
     get :listing
-    
+    get :paid
   end
 end
 

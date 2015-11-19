@@ -3,6 +3,7 @@ class ContactsController < ApplicationController
 		def index
 		@contacts= Contact.all
 		@banners= Banner.all
+		@stickers= Sticker.all
 	end
 
 	def new

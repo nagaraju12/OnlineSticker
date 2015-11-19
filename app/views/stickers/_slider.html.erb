@@ -1,18 +1,18 @@
- <ul class="bxslider" i>
+ <ul class="bxslider1" i>
 <% @stickers.each do |i| %>
 
 <% for image in i.images %>
 
 <li><%=link_to  image_tag(image.image.url, :height => 250, :width =>500),  sticker_path(i.id) %>
 Name:<%= i.name %><br>
-Price:$<%= i.price %></li>
+Price:<%= i.price %></li>
       
 <% end %>
 <% end %>
 
 </ul>
 <script >
-$('.bxslider').bxSlider({
+$('.bxslider1').bxSlider({
    slideWidth: 300,
     minSlides: 2,
     maxSlides: 4,

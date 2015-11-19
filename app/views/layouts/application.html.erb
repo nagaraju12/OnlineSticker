@@ -18,10 +18,10 @@
 <%= link_to 'Contact_us', contacts_path %>
 <%= link_to 'Stickers', stickers_path %>
   <%#= link_to "Sticker",  listing_stickers_path, :remote => true %>
- 
+
      </div>
 
-     
+                     
 <div id= "sign_in" >
 <% if user_signed_in? %>
 <%#= link_to 'Account', edit_user_registration_path %>
@@ -37,12 +37,18 @@
 
 <div id= "main_wrap" >
 
+<p><%= render 'stickers/search' %></p>
+<p><%= render 'layouts/navbar' %></p>
+
 <%= yield %>
 
  <div id="sticker_all"></div>
+
 <div id= "footer" >
 
-   
+
+ 
 </footer>
+
 </body>
 </html>

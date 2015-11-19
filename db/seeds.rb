@@ -7,10 +7,10 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-Category.find_or_create_by(:name => "Bed")
-Category.find_or_create_by(:name => "Curtains")
-Category.find_or_create_by(:name => "Table")
-Category.find_or_create_by(:name => "Curtains")
-Category.find_or_create_by(:name => "Table")
+Category.find_or_create_by(:name => "car")
+Category.find_or_create_by(:name => "bike")
+Category.find_or_create_by(:name => "bus")
+Category.find_or_create_by(:name => "cyckel")
+Category.find_or_create_by(:name => "van")
 
 Category.find_or_create_by(:name => "spoone")
