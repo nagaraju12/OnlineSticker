@@ -1,19 +1,19 @@
-
 <p>
 <% @sticker.images.each do |i| %>
 <%= image_tag i.image %>
 <% end %>
-</p>
-
-<p>
+<br>
   <strong>Name:</strong>
   <%= @sticker.name %>
-</p>
-
-<p>
+<br>
   <strong>Price:$</strong>
   <%= @sticker.price %>
 </p>
+ <%= form_for @sticker, html: { multipart: true } do |f| %>
 
+<%= f.label :quantity %>
+:<%= f.select :quantity, Sticker::Quantity, prompt:'1' %>
+
+  <% end %>
 <%= link_to 'Back', root_path %>
-
+ <%#= link_to "list of stickers",  listing_stickers_path, :remote => true %>

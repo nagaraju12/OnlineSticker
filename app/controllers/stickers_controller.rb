@@ -10,6 +10,7 @@ else
 @stickers = Sticker.where(category_id: @category_id).order("created_at DESC")
 end
 end
+
 	def new
 @sticker= Sticker.new
 	1.times{@sticker.images.build}
@@ -41,6 +42,7 @@ end
 		redirect_to stickers_path
 		
 	end
+
 
 
 

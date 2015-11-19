@@ -2,15 +2,15 @@
 <% @banners.each do |i| %>
 <% for image in i.images %>
 <li><%= image_tag(image.image.url, :height => 550, :width =>1200) %>
-<h2><%= i.name %></h2></li>
+<h2><%= link_to i.name, "#" %></h2></li>
 <% end %>
 <% end %>
 
 </ul>
 <script >
 $('.bxslider').bxSlider({
-  auto: true,
-  autoControls: true
+  auto: true
+ 
 });
 
 </script>
