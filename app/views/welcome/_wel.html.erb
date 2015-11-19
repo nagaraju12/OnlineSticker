@@ -1,8 +1,8 @@
 <ul class="bxslider" i>
 <% @banners.each do |i| %>
 <% for image in i.images %>
-<li><%= image_tag(image.image.url, :height => 400, :width =>1200) %>
-<h1><%= i.name %></h1></li>
+<li><%= image_tag(image.image.url, :height => 550, :width =>1200) %>
+<h2><%= i.name %></h2></li>
 <% end %>
 <% end %>
 

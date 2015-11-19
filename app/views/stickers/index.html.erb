@@ -1,36 +1,30 @@
 <p id="notice"><%= notice %></p>
 <h1><%= link_to "+New Sticker", new_sticker_path %></h1>
-
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
-
-    <th>Category</th>
       <th>Name</th>
-      <th>Description</th>
+      <th>Decription</th>
       <th>Price</th> 
-   
+      <th>Images</th> 
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @stickers.each do |sticker| %>
       <tr>
-      <td><%= sticker.category_id %></td>
         <td><%= sticker.name %></td>
         <td><%= sticker.description %></td>
         <td><%= sticker.price %></td>
-      <% sticker.images do |image| %>
+      <% sticker.images.each do |image| %>
 <td><%= image_tag image.image %></td>
 <% end %>
-</td>
+
  <td><%= link_to 'Show', sticker %></td>
         <td><%= link_to 'Edit', edit_sticker_path(sticker) %></td>
         <td><%= link_to 'Destroy', sticker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-       
-
+      
     <% end %>
   </tbody>
 </table>

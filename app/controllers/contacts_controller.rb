@@ -1,10 +1,15 @@
 class ContactsController < ApplicationController
-
-		def index
-		@contacts= Contact.all
-		@banners= Banner.all
+def index
+  @contacts = Contact.all
+  @banners= Banner.all
 		@stickers= Sticker.all
-	end
+   if params[:search]
+       @contacts = Contact.search(params[:search]).order("created_at DESC")
+    else
+       @contacts = Contact.all.order('created_at DESC')
+    end
+end
+		
 
 	def new
 		@contact= Contact.new

@@ -16,7 +16,7 @@ end
 	end
 
 	def create
-		@sticker= Sticker.new(sticker_params)
+		@sticker= Sticker.new(sticker_params.merge(user_id:current_user.id))
 		1.times{@sticker.images.build} if @sticker.images.blank?
 		if @sticker.save
 
@@ -41,10 +41,9 @@ end
 		redirect_to stickers_path
 		
 	end
-def paid
-		@stickers= Sticker.all
-			@sticker= Sticker.find(params[:id])
-end
+
+
+
 	def update
 		@sticker= Sticker.find(params[:id])
 		if @sticker.update(sticker_params)
