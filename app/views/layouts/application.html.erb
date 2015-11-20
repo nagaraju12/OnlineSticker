@@ -17,20 +17,20 @@
   <%= link_to 'About_us', about_path %> 
 <%= link_to 'Contact_us', contacts_path %>
 <%= link_to 'Stickers', stickers_path %>
-  <%#= link_to "list of stickers",  listing_stickers_path, :remote => true %>
+  <%= link_to "list of stickers",  listing_stickers_path, :remote => true %>
 
      </div>
 
                      
 <div id= "sign_in" >
-<% if user_signed_in? %>
+<% if current_user.present? %>
 <%#= link_to 'Account', edit_user_registration_path %>
-
-
 <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+ <% elsif current_user and current_user.role == 'admin' %>
 <% else %>
-<%= link_to 'Sign up', new_user_registration_path %>
-<%= link_to 'Sign in', new_user_session_path %>
+<%= link_to 'Sign in', new_user_session_path  %>
+<%= link_to "Sign up",  new_user_registration_path(:role => "bayer") %>
+
 <% end %>
 </div>
 </nav>

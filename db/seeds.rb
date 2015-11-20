@@ -7,10 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-Category.find_or_create_by(:name => "car")
-Category.find_or_create_by(:name => "bike")
-Category.find_or_create_by(:name => "bus")
-Category.find_or_create_by(:name => "cyckel")
-Category.find_or_create_by(:name => "van")
-
-Category.find_or_create_by(:name => "spoone")
+Category.find_or_create_by(:name => "Free Sticker")
+Category.find_or_create_by(:name => "Paid Sticker")

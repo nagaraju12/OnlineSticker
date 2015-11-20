@@ -19,9 +19,9 @@ class ApplicationController < ActionController::Base
 def after_sign_in_path_for(resource_or_scope)
     if resource_or_scope.is_a?(User)
       flash[:success] = "You have successfully logged in."
-      if current_user.role == 'user'
+      if current_user.role == 'bayer'
          root_path()
-      elsif current_user.role == 'admin'
+      elsif current_user.role == 'seller'
          dashboards_index_path()
        else
          root_path()
