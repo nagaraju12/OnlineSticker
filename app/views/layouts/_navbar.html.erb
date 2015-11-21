@@ -3,7 +3,7 @@
   <span class="caret"></span></button>
   <ul class="dropdown-menu">
     <% Category.all.each do |category| %>
-<li><%= link_to category.name,  stickers_path(:category => category.name) %></li>
+<li><%= link_to category.name,  "#" %></li>
 <% end %>
   </ul>
 </div>
