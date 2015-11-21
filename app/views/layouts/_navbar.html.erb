@@ -2,8 +2,8 @@
   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Categories
   <span class="caret"></span></button>
   <ul class="dropdown-menu">
-    <% Category.all.each do |category| %>
-<li><%= link_to category.name,  stickers_path(:category => category.name) %></li>
+    <% Sticker.all.each do |st| %>
+<li><%= link_to st.name, sticker_path(st.id) %></li>
 <% end %>
   </ul>
 </div>
