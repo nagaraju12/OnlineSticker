@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-	
+	#before_filter :is_login?
 def index
   @contacts = Contact.all
   @banners= Banner.all
