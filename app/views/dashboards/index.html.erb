@@ -1,3 +1,4 @@
+<h4>Dashboard Management</h4>
 <div class="col-lg-3">
         
            
@@ -6,15 +7,11 @@
            <div class="well sidebar-nav">
            
               <ul class="nav nav-list">
-                <li class="nav-header"</li>
+               
               <p id="notice"><%= notice %></p>
-              <p id="notice"><%= notice %></p>
-             
-<li><%= link_to " Banner management", banners_path %></li> 
-
-            </div><!--/.well -->
-          
-          </div><!--/span-->
-        </div><!--/row-->
-       
-            </ul>
+            
+    <%= link_to "Sticker management", stickers_path %><br>        
+<%= link_to " Banner management", banners_path %>
+<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %> 
+<p><%= render 'dashboards/board' %></p>
+            

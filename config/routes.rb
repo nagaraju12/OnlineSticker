@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'dashboards/index'
 
-  devise_for :users
+  devise_for :users 
 
   get 'welcome/index'
 resources :contacts

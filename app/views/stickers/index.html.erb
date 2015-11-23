@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= link_to "+New Sticker", new_sticker_path %></h1>
+<div class="text-right">
+<%= button_to "Back" , dashboards_index_path, :method => "get" %>
+</div>
+<style>
+   div.text-right{
+     float: right;
+}
+  </style>
+
+
 
 <table class="table table-bordered table-striped">
   <thead>
@@ -30,6 +40,6 @@
     <% end %>
   </tbody>
 </table>
- <td><%= link_to 'Back', dashboards_index_path %></td>
+ <td><%= button_to "Back" , dashboards_index_path, :method => "get" %></td>
 <br>
 
