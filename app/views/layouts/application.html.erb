@@ -24,9 +24,11 @@
                      
 <div id= "sign_in" >
 <% if current_user.present? %>
+
 <%#= link_to 'Account', edit_user_registration_path %>
 <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
  <% elsif current_user and current_user.role == 'admin' %>
+ <%= link_to "dashboard", dashboards_index_path %>
 <% else %>
 <%= link_to 'Sign in', new_user_session_path  %>
 <%= link_to "Sign up",  new_user_registration_path(:role => "bayer") %>
