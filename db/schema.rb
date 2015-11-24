@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20151120073834) do
 
   create_table "images", force: :cascade do |t|
     t.integer  "sticker_id",         limit: 4
-    t.integer  "banner_id",          limit: 4
     t.integer  "imagable_id",        limit: 4
     t.string   "imagable_type",      limit: 255
     t.string   "image_file_name",    limit: 255
