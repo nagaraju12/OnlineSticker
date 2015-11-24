@@ -1,3 +1,11 @@
+<div class="text-right">
+<%#= link_to "home", root_path %>
+</div>
+<style>
+   div.text-right{
+     float: right;
+}
+  </style>
 <h4>Dashboard Management</h4>
 <div class="col-lg-3">
         
@@ -7,15 +15,11 @@
            <div class="well sidebar-nav">
            
               <ul class="nav nav-list">
-                <li class="nav-header"</li>
+               
               <p id="notice"><%= notice %></p>
             
-    <li><%= link_to "Sticker management", stickers_path %></li>         
-<li><%= link_to " Banner management", banners_path %></li> 
+    <%= link_to "Sticker management", stickers_path %><br>        
+<%= link_to " Banner management", banners_path %><br>
+<%= link_to "Contact Request", contacts_path %>
 
-            </div><!--/.well -->
-          
-          </div><!--/span-->
-        </div><!--/row-->
-       
-            </ul>
+            

@@ -1,9 +1,10 @@
 class ContactsController < ApplicationController
-	
+	#before_filter :is_login?
 def index
   @contacts = Contact.all
   @banners= Banner.all
 		@stickers= Sticker.all
+		@stickers= Sticker.new
    if params[:search]
        @contacts = Contact.search(params[:search]).order("created_at DESC")
     else

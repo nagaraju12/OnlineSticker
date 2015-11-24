@@ -1,7 +1,8 @@
 class Sticker < ActiveRecord::Base
 	has_many :images, :as => :imagable
-validates :name, :description, :price,  :category_id, presence: true
+validates :name, :description,:category_id, presence: true
 has_many :users
+ #validates :status, :presence => true
 Quantity = ["1","2", "3","4", "5" ]
 	belongs_to :category
 	accepts_nested_attributes_for :images, :allow_destroy => true, :reject_if=>:all_blank

@@ -13,12 +13,8 @@
  </div> 
 
 <div id= "page_nav" >
-     <%= link_to 'Home',   root_path %>
-  <%= link_to 'About_us', about_path %> 
-<%= link_to 'Contact_us', contacts_path %>
-<%= link_to 'Stickers', "#" %>
-  <%#= link_to "list of stickers",  listing_stickers_path, :remote => true %>
-
+ 
+<p><%= render 'layouts/header' %></p>
      </div>
 
                      
@@ -31,8 +27,8 @@
  <%= link_to "dashboard", dashboards_index_path %>
 <% else %>
 <%= link_to 'Sign in', new_user_session_path  %>
-<%= link_to "Sign up",  new_user_registration_path(:role => "bayer") %>
-
+<%= link_to "Sign up",  new_user_registration_path(:role => "buyer") %>
+<%#= button_to "Sign_up" ,  new_user_registration_path(:role => "bayer"), :method => "get" %>
 <% end %>
 </div>
 </nav>

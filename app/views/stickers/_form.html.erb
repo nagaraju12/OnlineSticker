@@ -15,9 +15,13 @@
     </div>
   <% end %>
 
+    <%#= f.label :category_id %>
+    <%#= f.collection_select :category_id, Category.all, :id, :name %>
+
 <div class="form-group">
     <%= f.select(:category_id, Category.all.map {|c| [c.name, c.id]}, :prompt =>"Choose a Category")%>
   </div>
+
 
   <div class='field'>
 <%= f.fields_for :images do |image| %>
@@ -47,4 +51,3 @@
   </div>
 
 <% end %>
-
