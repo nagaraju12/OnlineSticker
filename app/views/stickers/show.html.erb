@@ -12,7 +12,7 @@
  <%= form_for @sticker, html: { multipart: true } do |f| %>
 
 <%= f.label :quantity %>
-:<%= f.select :quantity, Sticker::Quantity, prompt:'1' %>
+<%= f.text_field :quantity %>
   <% end %>
 
  <%#= link_to "list of stickers",  listing_stickers_path, :remote => true %>

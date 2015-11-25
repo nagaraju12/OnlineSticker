@@ -1,4 +1,5 @@
 <%= nested_form_for @sticker, html: { multipart: true } do |f| %>
+<%= f.hidden_field :status ,:value => params[:status] %>
 
   <% if @sticker.errors.any? %>
 
