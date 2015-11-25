@@ -1,9 +1,9 @@
 <h1>Editing Banner</h1>
 
-<% @banner.images.each do |i| %>
-
+<br><% @banner.images.each do |i| %>
 <%= image_tag(i.image.url, :height => 50, :width =>80 ) %>
-<%= render 'form' %>
 <% end %>
+<%= render 'edit_for' %>
+
 <%= link_to 'Show', @banner %> 
 <%= link_to 'Back', banners_path %>
