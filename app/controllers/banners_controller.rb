@@ -29,6 +29,7 @@ before_filter :is_login?
 
 	def update
 		@banner= Banner.find(params[:id])
+			1.times{@banner.images.build} if @banner.images.blank?
 		if @banner.update(banner_params)
 			redirect_to banners_path
 		else

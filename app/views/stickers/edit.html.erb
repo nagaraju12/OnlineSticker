@@ -1,6 +1,15 @@
 <h1>Editing Sticker</h1>
-
+ <%= form_for @sticker, html: { multipart: true } do |f| %>
+<div class="form-group">
+    <%= f.select(:category_id, Category.all.map {|c| [c.name, c.id]}, :prompt =>"Choose a Category")%>
+  </div>
+  <% end %>
+<br><% @sticker.images.each do |i| %>
+<%= image_tag(i.image.url, :height => 50, :width =>80 ) %>
 <%= render 'form' %>
+<% end %>
+
+<p>
 
 <%= link_to 'Show', @sticker %> 
 <%= link_to 'Back', stickers_path %>

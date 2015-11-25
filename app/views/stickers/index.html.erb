@@ -4,13 +4,6 @@
 <div class="text-right">
 <%= button_to "Back" , dashboards_index_path, :method => "get" %>
 </div>
-<style>
-   div.text-right{
-     float: right;
-}
-  </style>
-
-
 
 <table class="table table-bordered table-striped">
   <thead>
@@ -18,7 +11,8 @@
       <th>Name</th>
       <th>Description</th>
       <th>Price</th> 
-      <th>Images</th> 
+      <th>Images</th>
+   <th>Caption part</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -28,13 +22,12 @@
         <td><%= sticker.name %></td>
         <td><%= sticker.description %></td>
         <td><%= sticker.price %></td>
-      <% sticker.images.each do |image| %>
-<td><%= image_tag image.image %></td>
-<% end %>
-
- <td><%= link_to 'Show', sticker %></td>
-        <td><%= link_to 'Edit', edit_sticker_path(sticker) %></td>
-        <td><%= link_to 'Destroy', sticker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><% sticker.images.each do |image| %>
+<%= link_to  image_tag(image.image.url, :height => 50, :width =>80 ), sticker_path(sticker.id) %>
+<% end %></td>
+<td><%= link_to 'Show', sticker %>
+        <%= link_to 'Edit', edit_sticker_path(sticker) %>
+       <%= link_to 'Destroy', sticker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
       
     <% end %>
@@ -42,4 +35,8 @@
 </table>
  
 <br>
-
+<style>
+   div.text-right{
+     float: right;
+}
+  </style>
