@@ -1,8 +1,7 @@
 <ul class="bxslider" i>
 <% @banners.each do |i| %>
 <% for image in i.images %>
-<li><%= image_tag(image.image.url, :height => 450, :width =>1200) %>
-<h2><%= link_to i.name, "#" %></h2></li>
+<li><%= image_tag(image.image.url, :height => 450, :width =>1200, :title => "#{i.name}") %>
 <% end %>
 <% end %>
 
@@ -10,6 +9,8 @@
 <script >
 $('.bxslider').bxSlider({
    mode: 'fade',
+   captions: true,
+   autoHover: true,
 	
   auto: true
 });

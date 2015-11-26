@@ -12,7 +12,11 @@
     </div>
   <% end %>
   <div class='field'>
-  
+  <% if !@banner.new_record? %>
+<br><% @banner.images.each do |i| %>
+<%= image_tag(i.image.url, :height => 50, :width =>80 ) %>
+<% end %>
+<% end %>
 <%= f.fields_for :images do |image| %>
   <%= image.file_field :image %>
   <%= image.link_to_remove "Remove image" %>

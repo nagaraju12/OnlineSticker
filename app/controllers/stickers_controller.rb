@@ -15,10 +15,13 @@ end
 	def new
 @sticker= Sticker.new
 	1.times{@sticker.images.build}
+	@status = params[:status]
+  
 	end
 
 	def create
 		@sticker= Sticker.new(sticker_params.merge(user_id:current_user.id))
+	@status = @sticker.status
 		1.times{@sticker.images.build} if @sticker.images.blank?
 		if @sticker.save
 
@@ -41,17 +44,13 @@ end
 		@sticker= Sticker.find(params[:id])
 		@sticker.destroy
 		redirect_to stickers_path
-		
 	end
 
-
-
-
-	def update
+def update
 		@sticker= Sticker.find(params[:id])
+		1.times{@sticker.images.build} if @sticker.images.blank?
 		if @sticker.update(sticker_params)
 			redirect_to stickers_path
-			
 		else
 			render "edit"
 		end
