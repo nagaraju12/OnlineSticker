@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+   
+   get '/cart' => 'cart#index'
+  get '/cart/clear' => 'cart#clearCart'
+  get '/cart/:id' => 'cart#add'
+
+
   get 'dashboards/index'
 
   devise_for :users 

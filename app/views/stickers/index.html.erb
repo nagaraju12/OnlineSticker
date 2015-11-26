@@ -35,6 +35,7 @@
  <td><%= link_to 'Show', sticker %></td>
         <td><%= link_to 'Edit', edit_sticker_path(sticker) %></td>
         <td><%= link_to 'Destroy', sticker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td> <a href="/cart/<%= sticker.id %>">Add To cart </a> </td>
       </tr>
       
     <% end %>
