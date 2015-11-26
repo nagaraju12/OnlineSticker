@@ -1,6 +1,7 @@
 class Sticker < ActiveRecord::Base
 	has_many :images, :as => :imagable
-validates :name, :description,:category_id, presence: true
+validates :description,:category_id, presence: true
+ validates_uniqueness_of :name
 has_many :users
  #validates :status, :presence => true
 

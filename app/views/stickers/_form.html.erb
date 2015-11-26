@@ -15,7 +15,6 @@
       </ul>
     </div>
   <% end %>
-
     <%#= f.label :category_id %>
     <%#= f.collection_select :category_id, Category.all, :id, :name %>
     <div class="form-group">
@@ -38,11 +37,14 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-
+<% if !:status %>
   <div class="field">
   <%= f.label :price %><br>
   <%= f.text_field :price %>
   </div>
+  <% else %>
+  
+  <% end %>
   
   <div class="field">
     <%= f.label :description %><br>
@@ -54,3 +56,6 @@
   </div>
 
 <% end %>
+<script>
+$('form').data('status')
+</script>

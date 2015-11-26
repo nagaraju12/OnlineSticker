@@ -1,7 +1,11 @@
 <h1>Add sticker </h1>
-
-
+<%= form_for @sticker, html: { multipart: true } do |f| %>
+<ul class="status">
+ <%= link_to (f.radio_button :status, "sticker"), new_sticker_path %>Free sticker&nbsp;
+<%= f.radio_button :status, "sticker" %>Paid sticker&nbsp;
+</ul>
 <%= render 'form' %>
+<% end %>
 
 
 

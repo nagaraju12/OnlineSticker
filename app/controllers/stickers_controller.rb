@@ -16,7 +16,7 @@ end
 @sticker= Sticker.new
 	1.times{@sticker.images.build}
 	@status = params[:status]
-	    
+  
 	end
 
 	def create
