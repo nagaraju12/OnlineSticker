@@ -1,30 +1,45 @@
 class CartController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
-	def add
-		id = params[:id]
-		if session[:cart] then
-				cart = session[:cart]
-		else
-			session[:cart] = {}
-			cart = session[:cart]
-		end
-		if cart[id] then
-			cart[id] = cart[id] + 1
-		else
-			cart[id] = 1
-		end
-		redirect_to :action => :index
-	end
-	def clearCart
-		session[:cart] = nil
-		redirect_to :action => :index
-	end
-
-  def index
-  	if session[:cart] then
-  		@cart = session[:cart]
-  	else
-  		@cart = {}
-  	end
+  #before_action :authenticate_user!
+	 def index
+  @carts= Cart.all
   end
+
+  def new
+   @cart = Cart.new
+  end
+
+def create
+@cart = Cart.new(cart_params)
+if @cart.save
+  redirect_to @cart
+else
+  render "new"
 end
+end
+
+def show
+  @cart = Cart.find(params[:id])
+end
+
+def edit
+    @cart = Cart.find(params[:id])
+  end
+
+  def update
+      @cart = Cart.find(params[:id])
+      if @cart.update(cart_params)
+        redirect_to @cart
+      else
+        render "edit"
+      end
+    end
+def destroy
+        @cart = Cart.find(params[:id])
+        @cart.destroy
+        redirect_to carts_path
+      end
+
+      def cart_params
+        params.require(:cart).permit!
+      end
+    end

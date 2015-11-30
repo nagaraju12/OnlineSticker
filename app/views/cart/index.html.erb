@@ -1,24 +1,15 @@
 <h1>Your Cart</h1>
-<% if @cart.empty? %><br>
+
 <p>Your car is empty</p>
-<% else %>
-<%= link_to 'Empty YOUR Cart' ,cart_clear_path %>
-<% end %>
+
+<%= link_to 'Empty YOUR Cart' ,lineitems_path %>
+
 <br><br><br>
 <% total = 0 %>
 <ul>
-<% @cart.each do |id , quantity| %>
-<% sticker = Sticker.find_by_id(id) %>
-<li>
-<%= link_to sticker.name, sticker %>
-<p><%= sticker.description %></p>
-<% sticker.images.each do |image| %>
-<td><%= image_tag image.image %></td>
-<p><%= number_to_currency(sticker.price, :unit => '$') %></p>
-<p>Quantity: <%= quantity %></p>
-</li>
-<% total += quantity * sticker.price %>
-<p><b> <%= number_to_currency(total, :unit => '$') %></b></p>
+
+
+
 </ul>
-<% end %>
-<% end %>
+
+
