@@ -1,25 +1,8 @@
-<div class="text-right">
-<%#= link_to "home", root_path %>
-</div>
-<style>
-   div.text-right{
-     float: right;
-}
-  </style>
+<p id="notice"><%= notice %></p>
 <h4>Dashboard Management</h4>
-<div class="col-lg-3">
-        
-           
-            <ul class="nav nav-list">
-             
-           <div class="well sidebar-nav">
-           
-              <ul class="nav nav-list">
-               
-              <p id="notice"><%= notice %></p>
-            
-    <%= link_to "Sticker management", stickers_path %><br>        
+<%= link_to "Sticker management", stickers_path %><br>        
 <%= link_to " Banner management", banners_path %><br>
 <%= link_to "Contact Request", contacts_path %>
+ 
 
             

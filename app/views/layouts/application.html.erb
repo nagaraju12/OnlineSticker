@@ -26,7 +26,7 @@
  <% elsif current_user and current_user.role == 'admin' %>
  <%= link_to "dashboard", dashboards_index_path %>
 <% else %>
-<%= link_to 'Sign in', new_user_session_path  %>
+<%= link_to 'Sign in', new_user_session_path(current_user)  %>
 <%= link_to "Sign up",  new_user_registration_path(:role => "buyer") %>
 <%#= button_to "Sign_up" ,  new_user_registration_path(:role => "bayer"), :method => "get" %>
 
@@ -40,6 +40,7 @@
 
 
 <%= yield %>
+  
 
  <div id="sticker_all"></div>
 

@@ -6,10 +6,13 @@ class CategoriesController < ApplicationController
 
 	def new
 		@category= Category.new
+		1.times{@category.images.build}
+
 	end
 
 def create
 	@category= Category.new(category_params)
+	1.times{@category.images.build} if @category.images.blank?
 if @category.save
 	redirect_to categories_path
 else
@@ -27,6 +30,7 @@ end
 
 def update
 	@category= Category.find(params[:id])
+	1.times{@category.images.build} if @category.images.blank?
 	if @category.update(category_params)
 		redirect_to categories_path
 	else

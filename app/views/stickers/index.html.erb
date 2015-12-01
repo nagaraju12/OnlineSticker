@@ -19,7 +19,7 @@
   <tbody>
     <% @stickers.each do |sticker| %>
       <tr>
-        <td><%= sticker.name %></td>
+        <td><%=link_to sticker.name, sticker_path(sticker.id) %></td>
         <td><%= sticker.description %></td>
         <td><%= sticker.price %></td>
       <td><% sticker.images.each do |image| %>

@@ -1,5 +1,5 @@
 class StickersController < ApplicationController
-
+#before_filter :is_login?
 def index
 	if params[:category].blank?
 @stickers=Sticker.all.order("created_at ASC")
@@ -25,7 +25,7 @@ end
 		1.times{@sticker.images.build} if @sticker.images.blank?
 		if @sticker.save
 
-			redirect_to @sticker, :notice => "Successfully created sticker."
+			redirect_to stickers_path, :notice => "Successfully created sticker."
 			
 		else
 			render "new"
@@ -34,6 +34,7 @@ end
 
 	def show
 		@sticker= Sticker.find(params[:id])
+
 	end
 
 	def edit
