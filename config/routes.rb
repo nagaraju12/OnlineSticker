@@ -22,5 +22,4 @@ resources :banners
 end
 
  get "/about", :to => "welcome#about"
-
 end

@@ -5,7 +5,7 @@ def index
 @stickers=Sticker.all.order("created_at ASC")
 	@banners= Banner.all
 	@contacts= Contact.all
-	@sticker= Sticker.new
+	
 else
 @category_id = Category.find_by(:name=>params[:category]).id
 @stickers = Sticker.where(category_id: @category_id).order("created_at DESC")
@@ -25,7 +25,7 @@ end
 		1.times{@sticker.images.build} if @sticker.images.blank?
 		if @sticker.save
 
-			redirect_to stickers_path, :notice => "Successfully created sticker."
+			redirect_to @sticker, :notice => "Successfully created sticker."
 			
 		else
 			render "new"
@@ -34,7 +34,7 @@ end
 
 	def show
 		@sticker= Sticker.find(params[:id])
-
+   
 	end
 
 	def edit

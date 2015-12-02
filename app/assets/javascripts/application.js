@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require jquery_nested_form
+//= require jquery.elevatezoom
 //= require turbolinks
 //= require bxslider
 //= require_tree .
