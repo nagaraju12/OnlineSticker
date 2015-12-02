@@ -36,12 +36,12 @@
 
  <%= f.label :name %><br/>
     <div class="form-group">
-        <%= f.text_field :name, placeholder: "Name", class: "form-control input-lg", label: false, :required =>true %>
+        <%= f.text_field :name, placeholder: "Name", class: "form-control input-lg", label: false, :uniqueness_of => true, :required =>true %>
     </div>
   
    <%= f.label :price %><br/>
     <div class="form-group">
-        <%= f.text_field :price, placeholder: "Price", class: "form-control input-lg", label: false, :required =>true %>
+        <%= f.text_field :price, placeholder: "Price", class: "form-control input-lg", label: false %>
     </div>
 
   <%= f.label :description %><br/>
