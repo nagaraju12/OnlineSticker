@@ -1,3 +1,52 @@
-<%= link_to 'Sign out', root_path, :method => :delete %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OnlineSticker</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <nav id ="nav">
+ </div> 
+
+<div id= "page_nav" >
+ 
+
+     </div>
+                     
+<div id= "sign_in" >
+
+ <% if current_user and current_user.role == 'admin' %>
+<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+<%= link_to 'Profile Setting', edit_user_registration_path %>
+ <%#= link_to "dashboard", dashboards_index_path %>
+<% else %>
+<%#= link_to 'Sign in', new_user_session_path(current_user)  %>
+<%#= link_to "Sign up",  new_user_registration_path(:role => "buyer") %>
+<%#= button_to "Sign_up" ,  new_user_registration_path(:role => "bayer"), :method => "get" %>
+
+<% end %>
+</div>
+</nav>
+
+<div id= "main_wrap" >
+
+<p><%= render 'stickers/search' %></p>
+
 
 <%= yield %>
+  
+
+ <div id="sticker_all"></div>
+
+<div id= "footer" >
+
+
+ 
+</footer>
+
+</body>
+</html>
