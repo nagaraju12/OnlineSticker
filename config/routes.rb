@@ -7,7 +7,16 @@ Rails.application.routes.draw do
 resources :contacts
 resources :banners
 resources :lineitems
-  resources :carts , :controller => 'carts', :action => 'show', :id => 'current'
+  resources :carts  do
+    member do
+      get :edit_lineitem
+      put :update_lineitem
+    end
+    collection do
+      delete :empty_carts
+  	  get :cart_details
+  	end
+  end
  resources :categories
  root 'welcome#index'
   resources :stickers do

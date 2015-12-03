@@ -1,0 +1,75 @@
+<table class="table table-bordered"> 
+    <td class="field-label col-xs-3 active">
+  <thead>
+  <hr />
+    <tr>
+     <th></th>
+     <th>Item</th>
+     <th>Quantity</th>
+     <th class="price">Price</th>
+     <th class="price">Total</th>
+     <th></th>
+  
+ </thead>
+ <% for lineitem in @cart.lineitems %>
+ <tbody>
+   <tr class="<%= cycle :odd, :even %>">
+    <td>
+      <% lineitem.sticker.images.where("image_show = #{true}").each do |img| %>
+      <li>
+        <% if img.try(:photo).present? && img.image_show? %>
+        <%=image_tag img.photo.url(:original),:style=>"width:40%;height:40%;" %>
+        <% end %>
+      </li>
+      <% end %>
+    </td>
+
+    <td><%=h lineitem.sticker.name %></td>
+    <td class="quantity">
+      <%= select_tag :quantity, options_for_select(@quantities, :selected => lineitem.quantity), :onchange => "quantity_select(this.value, #{current_cart.id}, #{line_item.id})" %>
+    </td>
+
+    <td class="price"><%= number_to_currency(lineitem.unit_price) %></td>
+    <td class="price"><%= number_to_currency(lineitem.full_price) %></td>
+
+    <td><%= link_to "close", cart_path(lineitem), :method => :delete, :confirm => "	Are You Sure",:class => "fa fa-close" %></td>
+  </tr>
+ 
+<% end %>
+</tbody>
+<tfoot>
+ </td>
+  <tr>
+    <td colspan="6" >
+      Grand Total: <h4><%= number_to_currency @cart.total_price %></h4>
+    </td>
+  </tr>
+</tfoot>
+</table>
+<p>
+
+<% if @cart.total_price  %>
+  <%= link_to "CHECKOUT >", new_sticker_path ,class: "pull-right btn btn-default "%>
+  <% end %> 
+
+
+
+
+
+</p>
+<script type="text/javascript">
+  function quantity_select(quantity, cart, lineitem) 
+  {
+    $.ajax({
+      url: "/carts/" + lineitem,
+      dataType: "Script",
+      method: "PUT",
+      data: {
+        quantity: quantity,
+        cart: cart
+      }
+    });
+    // $("#btn-save_"+ line_item).show();
+  }
+  
+</script>

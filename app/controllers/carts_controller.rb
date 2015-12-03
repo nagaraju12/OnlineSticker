@@ -17,6 +17,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   end
 
   def edit
+
   end
 
   
@@ -48,14 +49,19 @@ rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   end
 
   
-  def destroy
-    @cart.destroy
-    respond_to do |format|
-      format.html { redirect_to carts_url, notice: 'Cart was successfully destroyed.' }
-      format.json { head :no_content }
+  
+  def empty_carts
+    if current_cart.line_items.present? 
+      current_cart.destroy
+      session[:cart] = nil
     end
+    redirect_to carts_path
   end
+  def destroy
+  @cart.destroy
 
+    redirect_to @cart
+  end
   private
    
     def set_cart
@@ -66,7 +72,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
       params[:cart].permit(:sticker_id, :cart_id)
     end
     def invalid_cart
-logger.error "Attempt to access invalid cart #{params[:id]}"
-redirect_to store_url, notice: 'Invalid cart'
+ logger.error "Attempt to access invalid cart #{params[:id]}"
+  redirect_to sticker_url, notice: 'Invalid cart'
 end
 end
