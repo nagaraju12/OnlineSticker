@@ -1,11 +1,11 @@
 class StickersController < ApplicationController
-
+#before_filter :is_login?
 def index
 	if params[:category].blank?
 @stickers=Sticker.all.order("created_at ASC")
 	@banners= Banner.all
 	@contacts= Contact.all
-	@sticker= Sticker.new
+	
 else
 @category_id = Category.find_by(:name=>params[:category]).id
 @stickers = Sticker.where(category_id: @category_id).order("created_at DESC")
@@ -34,6 +34,7 @@ end
 
 	def show
 		@sticker= Sticker.find(params[:id])
+   
 	end
 
 	def edit

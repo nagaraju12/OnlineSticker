@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
-
+<% @category.images.each do |i| %>
+<%= image_tag(i.image.url, :height => 50, :width =>80 ) %>
+<% end %>
 
 <p>
   <strong>Name:</strong>

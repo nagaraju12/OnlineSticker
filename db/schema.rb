@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151127094537) do
+ActiveRecord::Schema.define(version: 20151203080409) do
 
   create_table "banners", force: :cascade do |t|
     t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.datetime "purchased_at"
+    t.integer  "sticker_id",   limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
@@ -37,6 +44,7 @@ ActiveRecord::Schema.define(version: 20151127094537) do
   create_table "images", force: :cascade do |t|
     t.integer  "sticker_id",         limit: 4
     t.integer  "banner_id",          limit: 4
+    t.integer  "category_id",        limit: 4
     t.integer  "imagable_id",        limit: 4
     t.string   "imagable_type",      limit: 255
     t.string   "image_file_name",    limit: 255
@@ -48,9 +56,16 @@ ActiveRecord::Schema.define(version: 20151127094537) do
   end
 
   create_table "lineitems", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "sticker_id", limit: 4
+    t.integer  "cart_id",    limit: 4
+    t.decimal  "unit_price",           precision: 7, scale: 2
+    t.datetime "created_at",                                               null: false
+    t.datetime "updated_at",                                               null: false
+    t.integer  "quantity",   limit: 4,                         default: 1
   end
+
+  add_index "lineitems", ["cart_id"], name: "index_lineitems_on_cart_id", using: :btree
+  add_index "lineitems", ["sticker_id"], name: "index_lineitems_on_sticker_id", using: :btree
 
   create_table "stickers", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -104,4 +119,6 @@ ActiveRecord::Schema.define(version: 20151127094537) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "lineitems", "carts"
+  add_foreign_key "lineitems", "stickers"
 end

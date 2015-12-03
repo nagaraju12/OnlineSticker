@@ -1,16 +1,11 @@
-<div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Categories
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
 
-
-    <% Category.all.each do |category| %>
-<li><%= link_to category.name,  "#" %></li>
-
+<%= form_tag stickers_path, :id => 'search_form', :method => :get do %>
+ <%= select_tag :category, options_for_select([["Stickers",""]]+Category.all.map{|a| a.name}) %>
 <% end %>
-<li><%#= link_to "free sticker",  stickers_path(:status => "free sticker") %>
-<%#= link_to 'paid sticker', stickers_path(:status => "paid sticker") %>
-</li>
-  </ul>
-</div>
- ____________________________________________________________________________________________________________________________________________________
+
+<script>
+  $('#category').change(function()
+ {
+     $('#search_form').submit();
+ });
+</script>____________________________________________________________________________________________________________________________________________________

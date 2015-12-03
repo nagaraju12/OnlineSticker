@@ -5,8 +5,9 @@
 
 <li><%=link_to  image_tag(image.image.url, :height => 250, :width =>500),  sticker_path(i.id) %>
 <%= link_to i.name, sticker_path(i.id) %><br>
- <%= button_to 'Add to Cart' , cart_path %><br>
-$<%= i.price %></li>
+$<%= i.price %>
+<%= button_to 'Add to Cart', lineitems_path(sticker_id: i) %></li>
+
      
 <% end %>
 <% end %>
@@ -15,12 +16,16 @@ $<%= i.price %></li>
 <script >
 
 $('.bxslider1').bxSlider({
-   slideWidth: 300,
-    minSlides: 2,
-    maxSlides: 4,
-    startSlide: 2,
-    auto: true,
-autoHover: true
+   auto: true,  
+          slideWidth: 308,
+          infiniteLoop: true,
+          speed: 5000,
+          pager: false,
+          autoHover: true,
+          minSlides: 3,
+          maxSlides: 12,
+          slideMargin: 20,
+          adaptiveHeight: true
 
 });
 

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 resources :contacts
 resources :banners
 resources :lineitems
-resources :cart
+  resources :carts , :controller => 'carts', :action => 'show', :id => 'current'
  resources :categories
  root 'welcome#index'
   resources :stickers do
@@ -18,5 +18,4 @@ resources :cart
 end
 
  get "/about", :to => "welcome#about"
-
 end

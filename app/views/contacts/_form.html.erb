@@ -11,24 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-   <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-  </div>
-   <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-   <div class="field">
-    <%= f.label :message %><br>
-    <%= f.text_area :message %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.label :name %><br/>
+   <div class="form-group">
+          <%= f.text_field :name, placeholder: "Name", class: "form-control input-lg", label: false, autofocus: true, :required =>true %>
+        </div>
 
-<% end %>
+   <%= f.label :phone %><br/>
+   <div class="form-group">
+          <%= f.text_field :phone, placeholder: "Phone", class: "form-control input-lg", label: false, :required =>true %>
+        </div>
+
+   <%= f.label :email %><br/>
+   <div class="form-group">
+          <%= f.text_field :email, placeholder: "Email", class: "form-control input-lg", label: false, :required =>true %>
+        </div>
+
+   <%= f.label :message %><br/>
+   <div class="form-group">
+          <%= f.text_area :message, placeholder: "Message", class: "form-control input-lg", label: false, :required =>true %>
+        </div>
+
+  <%= f.submit "Create Contact",class: "btn btn-primary"%>
+    <% end %>
