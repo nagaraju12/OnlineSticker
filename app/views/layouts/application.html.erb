@@ -25,10 +25,11 @@
 <%= link_to 'Profile Setting', edit_user_registration_path %>
 <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
  <% elsif current_user and current_user.role == 'admin' %>
- <%= link_to "dashboard", dashboards_index_path %>
+ <%#= link_to "dashboard", dashboards_index_path %>
 <% else %>
 <%= link_to 'Sign in', new_user_session_path(current_user)  %>
 <%= link_to "Sign up",  new_user_registration_path(:role => "buyer") %>
+<%#= link_to 'Profile Setting', edit_user_registration_path %>
 <%#= button_to "Sign_up" ,  new_user_registration_path(:role => "bayer"), :method => "get" %>
 
 <% end %>

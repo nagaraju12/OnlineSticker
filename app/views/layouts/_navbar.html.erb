@@ -1,5 +1,5 @@
 
-<%= form_tag stickers_path, :id => 'search_form', :method => :get do %>
+<%= form_tag stores_path, :id => 'search_form', :method => :get do %>
  <%= select_tag :category, options_for_select([["Stickers",""]]+Category.all.map{|a| a.name}) %>
 <% end %>
 
