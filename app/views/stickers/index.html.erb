@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= link_to "+New Sticker", new_sticker_path %></h1>
+<h1><%#= link_to "+New Sticker", new_sticker_path %></h1>
 <div class="text-right">
-<%= button_to "Back" , dashboards_index_path, :method => "get" %>
+<%= button_to "Back" , root_path, :method => "get" %>
 </div>
 
 <table class="table table-bordered table-striped">
@@ -26,7 +26,8 @@
 <%= link_to  image_tag(image.image.url, :height => 50, :width =>80 ), sticker_path(sticker.id) %>
 <% end %></td>
 <td><%= link_to 'Show', sticker %>
-        <%= link_to 'Edit', edit_sticker_path(sticker) %>
+        <%#= link_to 'Edit', edit_sticker_path(sticker) %>
+      <%= button_to 'Add to Cart', lineitems_path(sticker_id: sticker) %>
        <%= link_to 'Destroy', sticker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
       

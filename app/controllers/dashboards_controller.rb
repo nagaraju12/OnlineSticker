@@ -5,7 +5,7 @@ class DashboardsController < ApplicationController
   	 	@contacts= Contact.all
   	 	@banners= Banner.all
   	 	#render :layout => false
-  	 #render :layout => "admin"
+  	 render :layout => "admin"
   end
 
 end

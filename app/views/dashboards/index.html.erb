@@ -3,9 +3,12 @@
   <div class="panel panel-default">
     <div class="panel-heading">
     <h4>Dashboard Management</h4>
-<%= link_to "Sticker management", stickers_path %><br>        
-<%= link_to " Banner management", banners_path %><br>
-<%= link_to "Contact Request", contacts_path %>
+
+<h3><%= button_to "Sticker management" ,new_sticker_path, :method => "get" %></h3>       
+
+<h3><%= button_to "Banner management" ,banners_path, :method => "get" %></h3> 
+<h3><%= button_to "SContact Request" ,contacts_path, :method => "get" %></h3> 
+
  
 
             

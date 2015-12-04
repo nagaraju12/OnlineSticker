@@ -9,7 +9,11 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
    end
   end
- 
+  def layout?
+    if current_user and current_user.role == 'admin'
+      "admin"
+    end
+  end
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -28,7 +32,8 @@ def after_sign_in_path_for(resource_or_scope)
          root_path()
       end
    end
- end
+end
+
  private
 def set_cart
   @cart = Cart.find(session[:cart_id])
