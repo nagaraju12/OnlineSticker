@@ -1,0 +1,22 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+<h1>Your Pragmatic Catalog</h1>
+<% @stickers.each do |sticker| %>
+<% cache ['entry', sticker] do %>
+<div class="entry">
+
+<h3><%= sticker.name %></h3><br>
+<% sticker.images.each do |image| %>
+<td><%= image_tag image.image %></td>
+
+<% end %>
+<%= sanitize(sticker.description) %>
+<div class="price_line">
+<span class="price"><%= number_to_currency(sticker.price) %></span>
+<%= button_to 'Add to Cart', lineitems_path(sticker_id: sticker) %>
+
+</div>
+</div>
+<% end %>
+<% end %>
