@@ -1,12 +1,12 @@
 class StickersController < ApplicationController
 #before_filter :is_login?
-	before_filter :layout?
+	layout :layout?
 def index
+	
 	if params[:category].blank?
 @stickers=Sticker.all.order("created_at ASC")
 	@banners= Banner.all
 	@contacts= Contact.all
-	render :layout => "admin"
 else
 @category_id = Category.find_by(:name=>params[:category]).id
 @stickers = Sticker.where(category_id: @category_id).order("created_at DESC")
@@ -18,13 +18,11 @@ end
 	1.times{@sticker.images.build}
 	@status = params[:status]
   @stickers= Sticker.all
-  	 render :layout => "admin"
 	end
 
 	def create
 		@sticker= Sticker.new(sticker_params.merge(user_id:current_user.id))
 	@status = @sticker.status
-	render :layout => "admin"
 		1.times{@sticker.images.build} if @sticker.images.blank?
 		if @sticker.save
 
@@ -37,7 +35,7 @@ end
 
 	def show
 		@sticker= Sticker.find(params[:id])
-   
+   @carts = Cart.all
 	end
 
 	def edit

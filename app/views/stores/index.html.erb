@@ -10,10 +10,10 @@
 
 <div class="col-sm-6 col-md-3">
 <div class="tumbnail">
-<h3><%= sticker.name %></h3><br>
+
 <% sticker.images.each do |image| %>
 <td><%= image_tag image.image ,:height => 140, :width =>140%></td><br>
-<%= sanitize(sticker.description) %>
+<%= sticker.name %><br>
 <% end %>
 
 

@@ -1,8 +1,7 @@
-<% @sticker.images.each do |i| %>
-<%= image_tag(i.image.url, :height => 140, :width =>140 ) %>
- 
+<% @sticker.images.each do |image| %>
+<td><%= image_tag image.image ,:height => 140, :width =>140%></td><br>
+<%= @sticker.name %><br>
 <% end %>
-
 <br>
   <strong>Name:</strong>
   <%= @sticker.name %>

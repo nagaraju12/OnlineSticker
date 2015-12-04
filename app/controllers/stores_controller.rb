@@ -2,7 +2,7 @@ class StoresController < ApplicationController
 	
 def index
 	if params[:category].blank?
-@stickers=Sticker.all.order("created_at ASC")
+@stickers=Sticker.order("created_at ASC")
 	@banners= Banner.all
 	@contacts= Contact.all
 	
