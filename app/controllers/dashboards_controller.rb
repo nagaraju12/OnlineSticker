@@ -1,5 +1,5 @@
 class DashboardsController < ApplicationController
-	before_filter :is_login?
+	before_filter :layout?
   def index
   	 	@stickers= Sticker.all
   	 	@contacts= Contact.all

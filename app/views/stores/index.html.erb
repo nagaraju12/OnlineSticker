@@ -5,18 +5,15 @@
 <% @stickers.each do |sticker| %>
 <% cache ['entry', sticker] do %>
 <div class="entry">
-
-<h3><%= sticker.name %></h3><br>
 <% sticker.images.each do |image| %>
 <td><%= image_tag image.image, :height => 140, :width =>140 %></td>
-
-<% end %>
-<%= sanitize(sticker.description) %>
+<% end %><br>
+<%= sticker.name %><br>
 <div class="price_line">
 <span class="price"><%= number_to_currency(sticker.price) %></span>
 <%= button_to 'Add to Cart', lineitems_path(sticker_id: sticker) %>
 
 </div>
-</div>
+</div><br>
 <% end %>
 <% end %>

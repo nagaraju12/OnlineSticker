@@ -2,7 +2,9 @@
 
 
 <h1><%= link_to "+New contacts", new_contact_path %></h1>
-
+<div class="text-right">
+<%= button_to "Back" , dashboards_index_path, :method => "get" %>
+</div>
 <table class="table table-bordered table-striped">
 
 
@@ -33,6 +35,10 @@
 </table>
 
 <br>
-
+<style>
+   div.text-right{
+     float: right;
+}
+  </style>
 
 
