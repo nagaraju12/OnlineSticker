@@ -4,10 +4,12 @@ class LineitemsController < ApplicationController
 
     def index
     @lineitems = LineItem.all
+    @stickers = Sticker.all
   end
 
   
   def show
+     @stickers = Sticker.all
   end
 
   
