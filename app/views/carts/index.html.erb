@@ -1,7 +1,4 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Carts</h1>
-
 <table>
   <thead>
     <tr>
@@ -24,4 +21,13 @@
 
 <br>
 <h1><%= button_to "Continue Shoping" ,stores_path, :method => "get" %></h1>
+<div class="img-left">
+
+<%= image_tag("cart2.png", alt: "File Name Fancy", size: "50*80")%>
+</div>
 <%#= link_to 'New Cart', new_cart_path %>
+<style>
+   div.img-left{
+     float: left;
+   }
+  </style>

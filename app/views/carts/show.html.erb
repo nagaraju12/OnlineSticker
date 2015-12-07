@@ -19,12 +19,16 @@
   <tbody>
 <% @cart.lineitems.each do |item| %>➤
 <tr>
+ <% for item in @cart.lineitems %>
 <td><%= item.sticker.name %></td>
-<td><%= item.quantity %>&times;</td>
+
+<td><%= number_field_tag :qty, item.quantity, maxlength: "12", id: "cart-qty", class: "input-text qty", title: "Qty", size: '5', min: '1', max: '99', data: { lineitemi: item.id } %>&times;</td>
 <td class="item_price"><%= number_to_currency(item.total_price) %></td>
 <td class="item_price"><%= number_to_currency(item.total_price) %></td>
 <td colspan="2"><%= number_to_currency(@cart.total_price) %></td>
 </tr>
+
+<% end %>
 <% end %>
 </td>
 
@@ -34,3 +38,4 @@
 
  </table>
 <%= button_to 'Empty cart', cart_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+   
