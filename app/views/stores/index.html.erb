@@ -11,9 +11,9 @@
 <div class="col-sm-6 col-md-3">
 <div class="tumbnail">
 
-<% sticker.images.each do |image| %>
-<td><%= image_tag image.image ,:height => 140, :width =>140%></td><br>
-<%= sticker.name %><br>
+<% sticker.images.each do |t| %>
+<td><%= link_to image_tag(t.image ,:height => 140, :width =>140),store_path(t.id)%></td><br>
+
 <% end %>
 
 
