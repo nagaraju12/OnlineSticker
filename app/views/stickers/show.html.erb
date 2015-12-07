@@ -1,5 +1,7 @@
+
 <% @sticker.images.each do |image| %>
-<td><%= image_tag image.image ,:height => 140, :width =>140%></td><br>
+
+<td><%= image_tag(image.image.url, :height => 140, :width =>140 ) %></td>
 <%= @sticker.name %><br>
 <% end %>
 <br>
@@ -13,7 +15,7 @@
 <%= f.label :quantity %>
 <%= f.text_field :quantity %>
   <% end %>
-<%= link_to 'Back', stickers_path %>
+<%= link_to 'Back', root_path %>
 
  <%#= link_to "list of stickers",  listing_stickers_path, :remote => true %>
  

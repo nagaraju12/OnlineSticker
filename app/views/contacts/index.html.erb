@@ -3,7 +3,7 @@
 
 <h1><%= link_to "+New contacts", new_contact_path %></h1>
 <div class="text-right">
-<%= button_to "Back" , dashboards_index_path, :method => "get" %>
+<%#= button_to "Back" , dashboards_index_path, :method => "get" %>
 </div>
 <table class="table table-bordered table-striped">
 
@@ -15,6 +15,7 @@
       <th>Email</th>
       <th>Phone</th>
       <th>Message</th>
+       <th>Caption part</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,9 +27,9 @@
           <td><%= contact.email %></td>
             <td><%= contact.phone %></td>
               <td><%= contact.message %></td>
-        <td><%= link_to 'Show', contact %></td>
-        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', contact %>
+        <%= link_to 'Edit', edit_contact_path(contact) %>
+        <%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

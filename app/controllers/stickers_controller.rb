@@ -1,6 +1,6 @@
 class StickersController < ApplicationController
-#before_filter :is_login?
-	layout :layout?
+before_filter :is_login?
+	layout :layout?, only: [:new, :index,:edit, :destroy]
 def index
 	
 	if params[:category].blank?
@@ -35,7 +35,7 @@ end
 
 	def show
 		@sticker= Sticker.find(params[:id])
-   @carts = Cart.all
+   #@carts = Cart.all
 	end
 
 	def edit

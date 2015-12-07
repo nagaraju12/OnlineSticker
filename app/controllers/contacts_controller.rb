@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
 	#before_filter :is_login?
-	before_filter :layout?
+layout :layout?, only: [:new, :index]
 def index
   @contacts = Contact.all
   @banners= Banner.all
@@ -17,7 +17,7 @@ end
 
 	def new
 		@contact= Contact.new
-render :layout => "admin"
+#render :layout => "admin"
 	end
 
 	def create
@@ -57,5 +57,7 @@ render :layout => "admin"
 	def contact_params
 		params.require(:contact).permit!
 	end
+
+
 
 end

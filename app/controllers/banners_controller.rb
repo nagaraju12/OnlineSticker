@@ -1,15 +1,15 @@
 class BannersController < ApplicationController
 before_filter :is_login?
-before_filter :layout?
+layout :layout?, only: [:new, :index,:edit,:show, :destroy]
 	def index
 		@banners= Banner.all
-		render :layout => "admin"
+		
 	end
 
 	def new
 		@banner= Banner.new
 			1.times{@banner.images.build}
-			render :layout => "admin"
+		
 	end
 
 	def create

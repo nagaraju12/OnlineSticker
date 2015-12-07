@@ -8,8 +8,6 @@
 <li><%= item.quantity %> &times; <%= item.sticker.name %></li>
 <% end %>
 </ul>
-
-
  <h3>Your Cart</h3>
  <table>
 <% @cart.lineitems.each do |item| %>➤
@@ -24,4 +22,4 @@
 <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
 </tr>
  </table>
- <%= button_to 'Empty cart', cart_path , method: :delete, data: { confirm: 'Are you sure?' } %><br>
+<%= button_to 'Empty cart', cart_path, method: :delete, data: { confirm: 'Are you sure?' } %>

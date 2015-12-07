@@ -10,20 +10,17 @@
 <body>
 
   <nav id ="nav">
+
  </div> 
-
-<div id= "page_nav" >
  
-
-     </div>
+<div id= "page_nav" >
+</div>
                      
 <div id= "sign_in" >
 
  <% if current_user and current_user.role == 'admin' %>
  <%#= link_to "Dashboard", dashboards_index_path %>
 <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
-
- 
 <% else %>
 <%#= link_to 'Sign in', new_user_session_path(current_user)  %>
 <%#= link_to "Sign up",  new_user_registration_path(:role => "buyer") %>
@@ -32,22 +29,44 @@
 <% end %>
 </div>
 </nav>
-
+<div class="text-middle">
+<p id="notice">
+<h1><%= notice %></h1>
+</p></div>
 <div id= "main_wrap" >
 
 <p><%= render 'stickers/search' %></p>
 
+ <section id="leftColumn">
+<div id="left-nav"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+               <p><h4>Dashboard Management</h4>
 
+<h4><td><%= button_to "Sticker management" ,stickers_path, :method => "get" %></td></h4>       
 
- 
+<h4><td><%= button_to "Banner management" ,banners_path, :method => "get" %></td></h4> 
+<h4><td><%= button_to "Contact Request" ,contacts_path, :method => "get" %></h4></td></p>
+ <div class="text-middle">
 <%= yield %>
- <div id="sticker_all"></div>
+</div>
+            </div>
+            
 
-<div id= "footer" >
+        </div>
+    </div>
+   
 
-
- 
-</footer>
+<div id="sticker_all"></div></div>
 
 </body>
-</html>
+</html></div></body></html> </section>
+
+
+
+ 
+
+
+
+
