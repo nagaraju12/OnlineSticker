@@ -9,7 +9,7 @@ class LineitemsController < ApplicationController
 
   
   def show
-     @stickers = Sticker.all
+   
   end
 
   

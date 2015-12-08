@@ -71,7 +71,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
     end
 
     def cart_params
-      params[:cart].permit(:sticker_id, :cart_id)
+      params.require[:cart].permit(:sticker_id, :cart_id)
     end
     def invalid_cart
  logger.error "Attempt to access invalid cart #{params[:id]}"
