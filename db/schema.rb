@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 20151203080409) do
 
   create_table "images", force: :cascade do |t|
     t.integer  "sticker_id",         limit: 4
+    t.integer  "banner_id",          limit: 4
+    t.integer  "category_id",        limit: 4
     t.integer  "imagable_id",        limit: 4
     t.string   "imagable_type",      limit: 255
     t.string   "image_file_name",    limit: 255
@@ -62,8 +64,8 @@ ActiveRecord::Schema.define(version: 20151203080409) do
     t.integer  "quantity",   limit: 4,                         default: 1
   end
 
-  add_index "lineitems", ["cart_id"], name: "index_lineitems_on_cart_id", using: :btree
-  add_index "lineitems", ["sticker_id"], name: "index_lineitems_on_sticker_id", using: :btree
+  add_index "lineitems", ["cart_id"], name: "fk_rails_733d199599", using: :btree
+  add_index "lineitems", ["sticker_id"], name: "fk_rails_ba2e00665c", using: :btree
 
   create_table "stickers", force: :cascade do |t|
     t.string   "name",        limit: 255

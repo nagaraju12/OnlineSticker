@@ -19,7 +19,7 @@
 <td><%= sticker.name %></td>
 <div class="price_line">
 <span class="price"><%= number_to_currency(sticker.price) %></span>
-<%= button_to 'Add to Cart', lineitems_path(sticker_id: sticker) %>
+<%= button_to 'Add to Cart', lineitems_path(sticker_id: sticker),class: "btn btn-warning"  %>
 </div>
 </div>
 </div>
