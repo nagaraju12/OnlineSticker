@@ -36,11 +36,12 @@
   <tr>
 <div class="col-md-5 col-md-offset-4">
 <div class="pull-right"><td><h1>Grand Total</td>
-<%= number_to_currency(@cart.total_price) %></td></div>
-  </tr>
+:<%= number_to_currency(@cart.total_price) %></td></div>
+  </tr></h1>
 </tbody>
  </table>
 </div>
   </div>
-  <td><%= button_to 'Empty cart', cart_path,class: "btn btn-danger" , method: :delete, data: { confirm: 'Are you sure?'} %></td>
+    <td><%= button_to 'Empty cart', cart_path,class: "btn btn-danger" , method: :delete, data: { confirm: 'Are you sure?'} %></td>
+    </tr></tbody>
    

@@ -20,7 +20,7 @@
           <td><%= @stickers.price %></td>
        </tr>
          <td><%#= button_to 'Add to Cart', lineitems_path(sticker_id: i) %> </td>
-         <td><%= link_to 'Buy Now',root_path %> </td>
+         <td><%= link_to 'Buy Now',new_order_path,class: "btn btn-warning btn-lg" %> </td>
         
 </td>
 </tr>
