@@ -25,18 +25,22 @@
 <td><%= item.quantity %>&times;</td>
 <td class="item_price"><%= number_to_currency(item.unit_price) %></td>
 <td colspan="2"><%= number_to_currency(item.total_price) %></td>
+    
 </tr>
     <td><%#= link_to 'Destroy', @lineitem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <% end %>
 </td>
 </tbody>
 </table>
- <th>Grand Total</th><br>
-  <tbody>
+<tbody>
   <tr>
-  <td colspan="2"><%= number_to_currency(@cart.total_price) %></td>
+<div class="col-md-5 col-md-offset-4">
+<div class="pull-right"><td><h1>Grand Total</td>
+<%= number_to_currency(@cart.total_price) %></td></div>
   </tr>
 </tbody>
  </table>
-<%= button_to 'Empty cart', cart_path,class: "btn btn-danger" , method: :delete, data: { confirm: 'Are you sure?'} %>
+</div>
+  </div>
+  <td><%= button_to 'Empty cart', cart_path,class: "btn btn-danger" , method: :delete, data: { confirm: 'Are you sure?'} %></td>
    
