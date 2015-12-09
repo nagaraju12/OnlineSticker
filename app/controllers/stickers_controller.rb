@@ -1,5 +1,4 @@
 class StickersController < ApplicationController
-before_filter :is_login?
 	layout :layout?, only: [:new, :index,:edit, :destroy]
 def index
 	
@@ -17,7 +16,7 @@ end
 @sticker= Sticker.new
 	1.times{@sticker.images.build}
 	@status = params[:status]
-  @stickers= Sticker.all
+
 	end
 
 	def create
@@ -35,7 +34,7 @@ end
 
 	def show
 		@sticker= Sticker.find(params[:id])
-   #@carts = Cart.all
+   
 	end
 
 	def edit

@@ -11,6 +11,8 @@ else
 @stickers = Sticker.where(category_id: @category_id).order("created_at DESC")
 end
 end
+ def show
+end
    def sticker_params
     params.require(:sticker).permit!
   end

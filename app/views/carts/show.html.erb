@@ -2,24 +2,41 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 <h1><%= button_to "Continue Shoping" , stores_path, :method => "get" %></h1>
-<h2>Your Pragmatic Cart</h2>
-<ul>
-<% @cart.lineitems.each do |item| %>
-<li><%= item.quantity %> &times; <%= item.sticker.name %></li>
-<% end %>
-</ul>
+
  <h3>Your Cart</h3>
- <table>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+       <th>cart_Name</th>
+      <th>Quantity</th>
+      <th>Unitprice</th> 
+      <th>SubTotal</th>
+    
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
 <% @cart.lineitems.each do |item| %>➤
 <tr>
-<td><%= item.quantity %>&times;</td>
+ 
 <td><%= item.sticker.name %></td>
+
+<td><%= item.quantity %>&times;</td>
 <td class="item_price"><%= number_to_currency(item.total_price) %></td>
+<td colspan="2"><%= number_to_currency(@cart.total_price) %></td>
 </tr>
+    <td><%#= link_to 'Destroy', @lineitem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <% end %>
-<tr class="total_line">
-<td colspan="2">Total</td>
-<td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
-</tr>
+</td>
+</tbody>
+</table>
+ <th>Total</th><br>
+  <tbody>
+  <tr>
+  <td colspan="2"><%= number_to_currency(@cart.total_price) %></td>
+  </tr>
+</tbody>
  </table>
 <%= button_to 'Empty cart', cart_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+   
