@@ -24,6 +24,7 @@ class LineitemsController < ApplicationController
   def create
 sticker = Sticker.find(params[:sticker_id])
 @lineitem = @cart.add_sticker(sticker.id)
+
 respond_to do |format|
 if @lineitem.save
 format.html { redirect_to @lineitem.cart,
