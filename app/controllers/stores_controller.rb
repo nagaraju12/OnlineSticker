@@ -14,7 +14,7 @@ end
 
 
 def show
-
+@stickers = Sticker.find(params[:id])
 
 end
    def sticker_params

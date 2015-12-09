@@ -4,7 +4,7 @@
     <div class="row">
  <div class="col-md-4">
 
-
+<%= image_tag(@stickers.images.first.image.url(:thumb)) %></div>
 <div class="col-md-4">
 <div class="table-responsive">
           <table class="table">
@@ -16,8 +16,8 @@
             <td><strong>Description:</strong></td>
             <td><%= @stickers.description %></td>
             </tr>
-      <td><strong>Price:</strong></td>
-       <td><%= @stickers.price %></td>
+        <td><strong>Price:</strong></td>
+          <td><%= @stickers.price %></td>
        </tr>
          <td><%#= button_to 'Add to Cart', lineitems_path(sticker_id: i) %> </td>
          <td><%= link_to 'Buy Now',root_path %> </td>
@@ -31,5 +31,7 @@
 </div>
 </div>
  <div class="col-md-6 col-md-offset-1" >
+
+  <div class="col-md-6 col-md-offset-1" >
 
  </div>

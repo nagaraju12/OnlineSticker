@@ -12,23 +12,15 @@
 <% sticker.images.each do |i| %>
 <td><%= link_to  image_tag(i.image , :height => 140, :width =>140), store_path(i.id) %></td><br>
 <%= sticker.name %><br>
-</div>
-</div>
-<% end %>
-
-
 
 
 <div class="price_line">
 <span class="price"><%= number_to_currency(sticker.price) %></span>
-
-
-
-
-<%= button_to 'Add to Cart', lineitems_path(sticker_id: sticker),class: "btn btn-warning"  %>
+<%= button_to 'Add to Cart', lineitems_path(sticker_id: sticker) %>
+<%#= button_to 'Delete Cart', stores , method: :delete, data: { confirm: 'Are you sure?' }  %>
 </div>
 </div>
-
+<% end %>
 </div>
 </div><br>
 <% end %>
