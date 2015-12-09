@@ -1,25 +1,43 @@
 class OrdersController < ApplicationController
-include CurrentCart
-
-before_action :set_cart, only: [:new, :create]
-before_action :set_order, only: [:show, :edit, :update, :destroy]
-
- def index
+def index
     @orders = Order.all
-   end
-
-def show
-     @orders = Order.all
+    
   end
 
+  def new
+    @order = Order.new
+       
+  end
 
-def new
-if @cart.line_items.empty?
-redirect_to store_url, notice: "Your cart is empty"
-return
-end
-@order = Order.new
-end
+  def create
+    @order = Order.new(order_params)
 
+    if @order.save
+       
+      redirect_to orders_path, notice: "The order #{@order.name} has been uploaded."
+    else
+      render "new"
+    end
+  end
 
+ def update
+ 	@order = Order.find(params[:id])
+ 	if @order.update(order_params)
+ 		redirect_to orders_path, notice: "The order #{@order.name} has been uploaded."
+ 	else
+ 		render "edit"
+ 	end
+ end
+
+  def destroy
+    @order = Order.find(params[:id])
+    @order.destroy
+    redirect_to orders_path, notice:  "The order #{@order.name} has been deleted."
+  end
+
+private
+  def order_params
+    params.require(:order).permit!
+  end
 end
+#redirect_to resumes_path, notice: "The order #{@order.name} has been uploaded.

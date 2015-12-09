@@ -1,1 +1,41 @@
-hi
+
+<% if !flash[:notice].blank? %>
+  <div class="alert alert-info">
+  <%= flash[:notice] %>
+  </div>
+<% end %>
+ <%= link_to "New Order", new_order_path, class: "btn btn-primary" %>
+<br />
+<table class="table table-bordered table-striped">
+<h6>ORDERS</h6>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>E-mail</th>
+      <th>Phone</th>	
+      <th>Download Link</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.name %></td>
+        <td><%= order.email %></td>
+        <td><%= order.phone %></td>
+        <td><%= link_to "Download Resume", order.attachment_url %></td>
+        <td><%= button_to "Delete",  order, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{order.name}?" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+ 
+<style>
+   div.img-right{
+     float: right;
+
+
+   }
+  </style>
+
+ 

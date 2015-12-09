@@ -1,0 +1,32 @@
+
+<h5>ORDER</h5>
+<% if !@order.errors.empty? %>
+  <div class="alert alert-error">
+    <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="well">
+  <%= form_for @order, html: { multipart: true } do |f| %>
+  <div class="field">
+   <%= f.label :name %>
+    <%= f.text_field :name %>
+    </div>
+    <div class="field">
+    <%= f.label :phone%>
+    <%= f.text_field :phone %>
+    </div>
+    <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    </div>
+    <div class="field">
+    <%= f.label :file %>
+    <%= f.file_field :attachment %>
+    </div>
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  <% end %>

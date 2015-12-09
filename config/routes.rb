@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
 resources :contacts
 resources :banners
+resources :orders
 resources :stores
 resources :lineitems
   resources :carts  do
