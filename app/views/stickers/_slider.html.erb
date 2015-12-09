@@ -3,8 +3,8 @@
 
 <% for image in i.images %>
 
-<li><%=link_to  image_tag(image.image.url, :height => 180, :width => 200),  sticker_path(i.id) %>
-<%= link_to i.name, sticker_path(i.id) %><br>
+<li><%=link_to  image_tag(image.image.url, :height => 180, :width => 200),  stores_path(i.id) %>
+<%= link_to i.name, stores_path(i.id) %><br>
 Rs<%= i.price %>
 <%= button_to 'Add to Cart', lineitems_path(sticker_id: i),class: "btn btn-warning btn-sm"  %></li>
 
