@@ -5,7 +5,7 @@ class CreateLineitems < ActiveRecord::Migration
       t.belongs_to :cart,  foreign_key: true
       t.integer :sticker_id
       t.integer :cart_id
-      t.decimal  "unit_price",         :precision => 7, :scale => 2
+      t.decimal  :unit_price,:precision => 7, :scale => 2
       t.timestamps null: false
     end
   end

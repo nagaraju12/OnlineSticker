@@ -12,8 +12,10 @@
  *
  *= require bxslider
  */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 *{
 	margin: 12;
 	padding: 12;
@@ -27,7 +29,7 @@
 }
 
 #page_nav a, #sign_in a{
-	line-height: 40px;
+	line-height: 60px;
 	color: #fff;
 	padding: 0 20px 0 20px;
 	text-decoration: none;

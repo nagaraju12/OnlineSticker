@@ -10,6 +10,10 @@ current_item = lineitems.build(sticker_id: sticker_id)
 end
 current_item
 end
+def unit_price
+	lineitems.to_a.sum { |item| item.unit_price }
+	end
+
 def total_price
 lineitems.to_a.sum { |item| item.total_price }
 end
