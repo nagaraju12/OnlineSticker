@@ -8,12 +8,16 @@
 <div class="entry">
 <div class="col-sm-1 col-md-4">
 <div class="tumbnail">
+
 <% sticker.images.each do |i| %>
 <td><%= link_to  image_tag(i.image , :height => 140, :width =>140), store_path(i.id) %></td><br>
 <%= sticker.name %><br>
+
+
 <div class="price_line">
 <span class="price"><%= number_to_currency(sticker.price) %></span>
-<%= button_to 'Add to Cart', lineitems_path(sticker_id: i),class: "btn btn-warning btn-sm"  %></li>
+<%= button_to 'Add to Cart', lineitems_path(sticker_id: sticker),class: "btn btn-warning btn-sm"  %><br>
+<%= link_to 'Buy Now',new_order_path,class: "btn btn-success" %>
 <%#= button_to 'Delete Cart', stores , method: :delete, data: { confirm: 'Are you sure?' }  %>
 </div>
 </div>
