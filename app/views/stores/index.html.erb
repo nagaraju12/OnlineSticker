@@ -16,8 +16,8 @@
 
 <div class="price_line">
 <span class="price"><%= number_to_currency(sticker.price) %></span>
-<%= button_to 'Add to Cart', lineitems_path(sticker_id: sticker),class: "btn btn-warning btn-sm"  %><br>
-<%= link_to 'Buy Now',new_order_path,class: "btn btn-success" %>
+<td><%= button_to 'Add to Cart', lineitems_path(sticker_id: sticker),class: "btn btn-warning btn-sm"  %><br>
+<%= link_to 'Buy Now',new_order_path,class: "btn btn-success" %></td>
 <%#= button_to 'Delete Cart', stores , method: :delete, data: { confirm: 'Are you sure?' }  %>
 </div>
 </div>

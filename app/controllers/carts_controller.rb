@@ -53,12 +53,13 @@ rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   
   
   def empty_carts
-    if current_cart.line_items.present? 
+    if current_cart.lineitems.present? 
       current_cart.destroy
       session[:cart] = nil
     end
     redirect_to carts_path
   end
+  
   def destroy
   @cart.destroy
 

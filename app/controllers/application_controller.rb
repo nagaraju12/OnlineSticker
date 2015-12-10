@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
    end
   end
+  
   def layout?
     if current_user and current_user.role == 'admin'
       "admin"

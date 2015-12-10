@@ -3,7 +3,7 @@ class LineitemsController < ApplicationController
   before_action :set_cart, only: [:create]
 
     def index
-    @lineitems = LineItem.all
+    @lineitems = Lineitem.all
     @stickers = Sticker.all
   end
 
@@ -14,7 +14,7 @@ class LineitemsController < ApplicationController
 
   
   def new
-    @lineitem = LineItem.new
+    @lineitem = Lineitem.new
   end
 
 
@@ -24,17 +24,14 @@ class LineitemsController < ApplicationController
   def create
 sticker = Sticker.find(params[:sticker_id])
 @lineitem = @cart.add_sticker(sticker.id)
-
 respond_to do |format|
 if @lineitem.save
-format.html { redirect_to @lineitem.cart,
-notice: 'Thank U.' }
+format.html { redirect_to @lineitem.cart,notice: 'Thank U.' }
 format.json { render action: 'show', status: :created, location: @lineitem }
 format.js{ @current_item = @lineitem }
 else
 format.html { render action: 'new' }
-format.json { render json: @lineitem.errors,
-status: :unprocessable_entity }
+format.json { render json: @lineitem.errors,status: :unprocessable_entity }
 end
 end
 end
@@ -64,11 +61,11 @@ end
   private
     
     def set_lineitem
-      @lineitem = LineItem.find(params[:id])
+      @lineitem = Lineitem.find(params[:id])
     end
 
     
     def lineitem_params
-      params.require(:lineitem).permit(:sticker_id, :cart_id, :quantity)
+      params.require(:lineitem).permit!
     end
 end

@@ -8,9 +8,8 @@ has_many :users
 	belongs_to :category
 	accepts_nested_attributes_for :images, :allow_destroy => true, :reject_if=>:all_blank
 
-
-
-def self.search(search)
+def 
+	self.search(search)
   if search
     find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
   else

@@ -1,5 +1,5 @@
 class StickersController < ApplicationController
-	layout :layout?, only: [:new, :index,:edit, :destroy]
+	layout :layout?, only: [:new, :index,:edit, :destroy, :show]
 def index
 	
 	if params[:category].blank?
@@ -69,5 +69,4 @@ private
 def sticker_params
 	params.require(:sticker).permit!
 end
-
 end
