@@ -4,17 +4,23 @@
   <%= flash[:notice] %>
   </div>
 <% end %>
- <%= link_to "New Order", new_order_path, class: "btn btn-primary" %>
+ <%#= link_to "New Order", new_order_path, class: "btn btn-primary" %>
  
 <br />
 <table class="table table-bordered table-striped">
-<h6>ORDERS</h6>
+<h1>ORDERS</h1>
   <thead>
     <tr>
       <th>Name</th>
       <th>E-mail</th>
-      <th>Phone</th>	
-      <th>Download Link</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Zipcode</th>	
+      <th>Vehicle_model</th>
+      <th>Vehicle_no</th>
+      <th>Vehicle_make</th>
+       <th>Upload</th>
+       <th>Caption part</th>
       <th>&nbsp;</th>
     </tr>
   </thead>
@@ -24,8 +30,13 @@
         <td><%= order.name %></td>
         <td><%= order.email %></td>
         <td><%= order.phone %></td>
-        <td><%= link_to "Download Resume", order.attachment_url %></td>
-        <td><%= button_to "Delete",  order, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{order.name}?" %></td>
+        <td><%= order.address%></td>
+        <td><%= order.zip%></td>
+         <td><%= order.vehicle_model%></td>
+          <td><%= order.vehicle_no%></td>
+           <td><%= order.vehicle_make%></td>
+        <td><%= link_to " Upload", order.attachment_url %></td>
+        <td><%#= link_to 'Edit', edit_order_path(order) %><br><%= link_to "Delete",  order, method: :delete, confirm: "Are you sure that you wish to delete #{order.name}?" %></td>
       </tr>
     <% end %>
   </tbody>

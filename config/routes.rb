@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 resources :contacts
 resources :banners
 resources :orders
+
 resources :stores
 resources :lineitems
   resources :carts  do

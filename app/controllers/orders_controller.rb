@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  layout :layout?, only: [:index]
 def index
     @orders = Order.all
     
@@ -11,7 +12,7 @@ def index
 
   def create
     @order = Order.new(order_params)
-
+UserMailer.welcome_email(@order).deliver
     if @order.save
        
       redirect_to orders_path, notice: "The order #{@order.name} has been uploaded."

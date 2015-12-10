@@ -22,6 +22,7 @@ end
 
 	def create
 		@contact= Contact.new(contact_params)
+		UserMailer.welcome_email(@contact).deliver
 		if @contact.save
 			redirect_to @contact
 		else

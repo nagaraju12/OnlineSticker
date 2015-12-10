@@ -10,8 +10,10 @@
           <table class="table">
            <tbody>
            <tr>
+          
             <td><strong>Name:</strong>
              <td><%= @stickers.name %></td>
+             </td>
              <tr>
             <td><strong>Description:</strong></td>
             <td><%= @stickers.description %></td>
@@ -19,8 +21,13 @@
         <td><strong>Price:</strong></td>
           <td><%= @stickers.price %></td>
        </tr>
-         <td><%#= button_to 'Add to Cart', lineitems_path(sticker_id: i) %> </td>
-         <td><%= link_to 'Buy Now',new_order_path,class: "btn btn-warning btn-lg" %> </td>
+       <tr>
+       <td><strong>Quantity:</strong></td>
+       <td><%= @stickers.quantity %></td>
+       </tr>
+         <td> <%= button_to "<Continue Shoping" ,stores_path, :method => "get",class: "btn btn-success" %> </td>
+         <td><%= link_to 'Buy Now>',new_order_path,class: "btn btn-warning btn-lg" %> </td>
+       
         
 </td>
 </tr>

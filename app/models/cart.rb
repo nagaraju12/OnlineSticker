@@ -1,6 +1,6 @@
 class Cart < ActiveRecord::Base
 	has_many :lineitems, dependent: :destroy
- 
+
   def add_sticker(sticker_id)
 current_item = lineitems.find_by(sticker_id: sticker_id)
 if current_item

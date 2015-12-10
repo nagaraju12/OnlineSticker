@@ -1,0 +1,50 @@
+<%= form_for @order, html: { multipart: true } do |f| %>
+
+  <%= f.label :name %><br/>
+    <div class="form-group">
+        <%= f.text_field :name, placeholder: "Name", class: "form-control input-lg", label: false, :required =>true %>
+    </div>
+
+    <%= f.label :Email %><br/>
+    <div class="form-group">
+        <%= f.text_field :email, placeholder: "Email", class: "form-control input-lg", label: false, :required =>true %>
+    </div>
+
+    <%= f.label :Phone_No %><br/>
+    <div class="form-group">
+        <%= f.text_field :phone, placeholder: "Phone No", class: "form-control input-lg", label: false, :required =>true %>
+    </div>
+
+    <%= f.label :Address %><br/>
+    <div class="form-group">
+        <%= f.text_area :address, placeholder: "Address", class: "form-control input-lg", label: false, :required =>true %>
+    </div>
+
+    <%= f.label :Zip_code %><br/>
+    <div class="form-group">
+        <%= f.text_field :zip, placeholder: "Zip code", class: "form-control input-lg", label: false, :required =>true %>
+    </div>
+
+    
+    <div class="field">
+    <%= f.label :Rc_book_of_car %>
+    <%= f.file_field :attachment %>
+    </div>
+
+    <%= f.label :Vehicle_no %><br/>
+    <div class="form-group">
+        <%= f.text_field :vehicle_no, placeholder: "Vehicle No", class: "form-control input-lg", label: false, :required =>true %>
+    </div>
+
+    <%= f.label :Vehicle_Model %><br/>
+    <div class="form-group">
+        <%= f.text_field :vehicle_model, placeholder: "Vehicle Model", class: "form-control input-lg", label: false, :required =>true %>
+    </div>
+
+    <%= f.label :Vehicle_make %><br/>
+    <div class="form-group">
+        <%= f.text_field :vehicle_make, placeholder: "Vehicle Make", class: "form-control input-lg", label: false, :required =>true %>
+    </div>
+
+    <%= f.submit "Place Order",class: "btn btn-success"%>
+    <% end %>
