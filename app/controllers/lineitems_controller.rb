@@ -26,7 +26,7 @@ sticker = Sticker.find(params[:sticker_id])
 @lineitem = @cart.add_sticker(sticker.id)
 respond_to do |format|
 if @lineitem.save
-format.html { redirect_to @lineitem.cart,notice: 'Thank U.' }
+format.html { redirect_to @lineitem.cart,notice: '' }
 format.json { render action: 'show', status: :created, location: @lineitem }
 format.js{ @current_item = @lineitem }
 else
