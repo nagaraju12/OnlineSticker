@@ -2,13 +2,13 @@ class CombineItemsInCart < ActiveRecord::Migration
   def change
   	  	def up
 # replace multiple items for a single product in a cart with a single item
-Cart.all.each do |cart|
+Cart.each do |cart|
 # count the number of each product in the cart
 sums = cart.lineitems.group(:sticker_id).sum(:quantity)
 sums.each do |sticker_id, quantity|
 if quantity > 1
 # remove individual items
-cart.lineitems.where(sticker_id: sticker_id).delete_all
+cart.lineitems.where(sticker_id: sticker_id).delete
 # replace with a single item
 item = cart.lineitems.build(sticker_id: sticker_id)
 item.quantity = quantity

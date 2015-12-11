@@ -8,7 +8,8 @@
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
-       <th>cart_Name</th>
+    <th>Sticker</th>
+       <th>Name</th>
       <th>Quantity</th>
       <th>Price</th> 
       <th>SubTotal</th>
@@ -16,16 +17,17 @@
       <th colspan="3"></th>
     </tr>
   </thead>
+
   <tbody>
 <% @cart.lineitems.each do |item| %>
 <tr>
- 
+  <td><%= image_tag(item.sticker.images.first.image.url(:thumb)) %></td>
 <td><%= item.sticker.name %></td>
-
+ 
 <td><%= item.quantity %>&times;</td>
 <td class="item_price"><%= number_to_currency(item.unit_price) %></td>
 <td colspan="2"><%= number_to_currency(item.total_price) %></td>
-    
+  <td><%= link_to 'remove', cart_path(item) , method: :delete, data: { confirm: 'Are you sure?'} %></td>  
 </tr>
     <td><%#= link_to 'Destroy', @lineitem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <% end %>
@@ -39,10 +41,10 @@
 
 :<%= number_to_currency(@cart.total_price) %></td></div>
 
-<td><%= link_to 'remove', cart_path(),class: "btn btn-danger" , method: :delete, data: { confirm: 'Are you sure?'} %></td>
+
   </tr></h1>
 </tbody>
- </table>
+
 </div>
 </td></div></div></tr></tbody>
     
@@ -58,5 +60,5 @@
    div.text-center{
      float: center;
    }
+
   </style>
-    

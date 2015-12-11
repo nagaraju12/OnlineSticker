@@ -14,8 +14,8 @@
       <tr>
         <td><%= lineitem.sticker %></td>
         <td><%= lineitem.cart %></td>    
-        <td><%= link_to 'Show', lineitems %></td>
-        <td><%= link_to 'Edit', edit_lineitems_path(lineitem) %></td>
+        <td><%= link_to 'Show', lineitem %></td>
+        <td><%= link_to 'Edit', edit_lineitem_path(lineitem) %></td>
         <td><%= link_to 'Destroy', lineitem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Line item', new_lineitems_path %>
+<%= link_to 'New Line item', new_lineitem_path %>

@@ -1,6 +1,5 @@
 class LineitemsController < ApplicationController
   before_action :set_lineitem, only: [:show, :edit, :update, :destroy]
-  before_action :set_cart, only: [:create]
 
     def index
     @lineitems = Lineitem.all
@@ -23,6 +22,7 @@ class LineitemsController < ApplicationController
 
   def create
 sticker = Sticker.find(params[:sticker_id])
+@cart = current_cart
 @lineitem = @cart.add_sticker(sticker.id)
 respond_to do |format|
 if @lineitem.save

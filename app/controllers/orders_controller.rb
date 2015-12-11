@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   layout :layout?, only: [:index]
+  
 def index
     @orders = Order.all
     
