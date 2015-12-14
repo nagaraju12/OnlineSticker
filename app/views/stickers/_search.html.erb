@@ -1,11 +1,11 @@
 <div class="text-center">
 
 
- <%#=  form_tag stickers_path, :method => 'get' do %>
+ <%=  form_tag stickers_path(), :method => 'get' do %>
 
-    <%#= text_field_tag :search, params[:search] %>
-    <%#= submit_tag "Search", :name => nil %>
-<%# end %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
 
 
 </div>

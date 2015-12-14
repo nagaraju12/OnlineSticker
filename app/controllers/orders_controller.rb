@@ -16,7 +16,7 @@ def index
 UserMailer.welcome_email(@order).deliver
     if @order.save
        
-      redirect_to orders_path, notice: "The order #{@order.name} has been uploaded."
+      redirect_to root_path, notice: "The order #{@order.name} has been uploaded."
     else
       render "new"
     end
