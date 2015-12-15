@@ -1,5 +1,5 @@
 class StickersController < ApplicationController
-	layout :layout?, only: [:new, :index,:edit, :destroy, :show]
+	layout :layout?
 def index
 	
 	if params[:category].blank?
