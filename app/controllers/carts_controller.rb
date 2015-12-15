@@ -20,7 +20,8 @@ class CartsController < ApplicationController
       end
     end
   end
-   
+ 
+
   def destroy
     @item = Lineitem.find(params[:id])
     @item.destroy

@@ -4,7 +4,11 @@
     <div class="row">
  <div class="col-md-4">
 
-<%= image_tag(@stickers.images.first.image.url(:thumb)) %></div>
+<%=link_to image_tag(@stickers.images.first.image.url, :height => 350, :width =>350) %><br><br>
+<%= image_tag(@stickers.images.first.image.url, :height => 40, :width =>50) %></div>
+<div class="colum">
+ <div class="col-md-4"><br>
+</div></div>
 <div class="col-md-4">
 <div class="table-responsive">
           <table class="table">
@@ -27,8 +31,10 @@
        </tr>
      
          <td><%= link_to 'Buy Now>',new_order_path,class: "btn btn-warning btn-lg" %> </td>
-       
+     
+   
         
+</td>  
 </td>
 </tr>
 </tbody>
@@ -42,3 +48,4 @@
   <div class="col-md-6 col-md-offset-1" >
 
  </div>
+ 

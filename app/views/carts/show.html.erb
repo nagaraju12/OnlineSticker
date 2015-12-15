@@ -20,7 +20,7 @@
   <tbody>
 <% @cart.lineitems.each do |item| %>
 <tr>
-  <td><%= image_tag(item.sticker.images.first.image.url(:thumb)) %></td>
+  <td><%=  image_tag(item.sticker.images.first.image.url, :height => 90, :width =>80) %></td>
 <td><%= item.sticker.name %></td>
  <td class="item_price"><%= number_to_currency(item.unit_price) %></td>
      
