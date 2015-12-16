@@ -8,19 +8,24 @@ class CartsController < ApplicationController
   
   def show
   end
-  
-  def update
-    respond_to do |format|
-      if @cart.update(cart_params)
-        format.html { redirect_to @cart, notice: 'Cart was successfully updated.' }
-        format.json { render :show, status: :ok, location: @cart }
-      else
-        format.html { render :edit }
-        format.json { render json: @cart.errors, status: :unprocessable_entity }
-      end
+
+  def edit_lineitem
+    @lineitem = LineItem.find(params[:id])
+        respond_to do |format|
+      format.js
     end
   end
-   
+  
+  
+  def update
+    @item = Lineitem.find(params[:id])
+    if @item.update_attributes(cart_params)
+      respond_to do |format|
+        format.js
+      end
+    end
+  end 
+
   def destroy
     @item = Lineitem.find(params[:id])
     @item.destroy
@@ -41,4 +46,4 @@ class CartsController < ApplicationController
       logger.error "Attempt to access invalid cart #{params[:id]}"
       redirect_to sticker_url, notice: 'Invalid cart'
     end
-end
+  end

@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>OnlineSticker</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
 
   <%= csrf_meta_tags %>
 </head>
@@ -33,7 +33,7 @@
 <%= link_to "carts", cart_path(current_cart) %>
 <%#= link_to 'Profile Setting', edit_user_registration_path %>
 <%#= button_to "Sign_up" ,  new_user_registration_path(:role => "bayer"), :method => "get" %>
-
+<%#= render 'layouts/cart_text' %></h1>
 <% end %>
 </div>
 </nav>
@@ -45,5 +45,6 @@
 
 <%= yield %>
   <div id="sticker_all"></div>
+  <div id="cart"></div>
 </body>
 </html>

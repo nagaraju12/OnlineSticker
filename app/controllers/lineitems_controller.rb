@@ -24,8 +24,10 @@ class LineitemsController < ApplicationController
 sticker = Sticker.find(params[:sticker_id])
 @cart = current_cart
 @lineitem = @cart.add_sticker(sticker.id)
+#item.increment! :quantity
 respond_to do |format|
 if @lineitem.save
+
 format.html { redirect_to @lineitem.cart,notice: '' }
 format.json { render action: 'show', status: :created, location: @lineitem }
 format.js{ @current_item = @lineitem }
@@ -38,13 +40,11 @@ end
 
   
   def update
-    respond_to do |format|
-      if @lineitem.update(lineitem_params)
-        format.html { redirect_to @lineitem, notice: 'Line item was successfully updated.' }
-        format.json { render :show, status: :ok, location: @lineitem }
-      else
-        format.html { render :edit }
-        format.json { render json: @lineitem.errors, status: :unprocessable_entity }
+    @cart = current_cart
+        @item = Lineitem.find(params[:id])
+    if @item.update_attributes(lineitem_params)
+      respond_to do |format|
+        format.js
       end
     end
   end
