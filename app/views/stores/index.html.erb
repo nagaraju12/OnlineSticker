@@ -15,8 +15,10 @@
 
 
 <div class="price_line">
-<span class="price"><%= number_to_currency(sticker.price) %></span>
-<td><%= button_to 'Add to Cart', lineitems_path(sticker_id: sticker),class: "btn btn-warning btn-sm"  %><%= link_to 'Buy Now',store_path(i.id),class: "btn btn-success" %>
+<span class="price"><%= number_to_currency(sticker.price) %></span><br>
+
+<td><div class="floating"><%= button_to 'Add to Cart', lineitems_path(sticker_id: sticker),class: "btn btn-success"  %></div>
+<div class="floating"><%= link_to 'more info',store_path(i.id),class: "btn btn-warning btn-sm" %></div>
 </td>
 <%#= button_to 'Delete Cart', stores , method: :delete, data: { confirm: 'Are you sure?' }  %>
 </div>
@@ -26,3 +28,11 @@
 </div><br>
 <% end %>
 <% end %>
+<style>
+.floating {
+	display:inline-block;
+                  margin: 10px;
+                  }
+
+                  </style>
+                  

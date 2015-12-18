@@ -1,11 +1,10 @@
-
 <div class="panel panel-default">
   <div class="panel-body">
     <div class="row">
  <div class="col-md-4">
 
-<%=link_to image_tag(@stickers.images.first.image.url, :height => 350, :width =>350) %><br><br>
-<%= image_tag(@stickers.images.first.image.url, :height => 40, :width =>50) %></div>
+<%=link_to image_tag(@sticker.images.first.image.url, :height => 350, :width =>350) %><br><br>
+<%= image_tag(@sticker.images.first.image.url, :height => 40, :width =>50) %></div>
 <div class="colum">
  <div class="col-md-4"><br>
 </div></div>
@@ -15,23 +14,29 @@
            <tbody>
            <tr>
           
-            <td><strong>Name:</strong>
-             <td><%= @stickers.name %></td>
+            <td><strong>Name</strong>
+             <td><%= @sticker.name %></td>
              </td>
              <tr>
-            <td><strong>Description:</strong></td>
-            <td><%= @stickers.description %></td>
+            <td><strong>Description</strong></td>
+            <td><%= @sticker.description %></td>
             </tr>
-        <td><strong>Price:</strong></td>
-          <td><%= @stickers.price %></td>
+        <td><strong>Price</strong></td>
+          <td><%= @sticker.price %></td>
        </tr>
        <tr>
-       <td><strong>Quantity:</strong></td>
-       <td><%= @stickers.quantity %></td>
-       </tr>
-     
-         <td><%= link_to 'Buy Now>',new_order_path,class: "btn btn-warning btn-lg" %> </td>
-     
+     <%= form_for @sticker, html: { multipart: true } do |f| %>
+      <td><strong>Quantity => </strong></td>
+      <td><div class="field">
+<%= f.select :quantity, Sticker::Quantity, prompt: '1' %>
+</div> 
+<% end %></td>
+</tr> 
+<td><%= button_to 'Add to Cart', lineitems_path(:sticker_id => @sticker.id),class: "btn btn-success"  %></td>
+<td><%= link_to 'Buy Now>',new_order_path,class: "btn btn-warning"  %> </td>
+  
+
+    
    
         
 </td>  
@@ -48,4 +53,3 @@
   <div class="col-md-6 col-md-offset-1" >
 
  </div>
- 
