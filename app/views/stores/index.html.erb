@@ -2,15 +2,15 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 <h1>Your Pragmatic Catalog</h1>
-<div class="row">
+  <div class="commonrow">
 <% @stickers.each do |sticker| %>
 <% cache ['entry', sticker] do %>
 <div class="entry">
 <div class="col-sm-1 col-md-4">
 <div class="tumbnail">
-
+<div class="leftSec" style="max-height: 400px;overflow: auto;">
 <% sticker.images.each do |i| %>
-<td><%= link_to  image_tag(i.image , :height => 140, :width =>140), store_path(i.id) %></td><br>
+<td><div class="midSec"><%= link_to  image_tag(i.image, :height => 140, :width =>140 ), store_path(i.id) %></td><br></div>
 <%= sticker.name %><br>
 
 
@@ -20,6 +20,8 @@
 </td>
 <%#= button_to 'Delete Cart', stores , method: :delete, data: { confirm: 'Are you sure?' }  %>
 </div>
+</div>
+</td>
 </div>
 <% end %>
 </div>

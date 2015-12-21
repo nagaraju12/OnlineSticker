@@ -16,7 +16,6 @@ class CartsController < ApplicationController
     end
   end
   
-  
   def update
     @item = Lineitem.find(params[:id])
     if @item.update_attributes(cart_params)
@@ -35,7 +34,7 @@ class CartsController < ApplicationController
   private
    
     def set_cart
-      @cart = Cart.find(current_cart)
+      @cart = Cart.find(params[:id])
     end
 
     def cart_params
