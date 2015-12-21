@@ -1,9 +1,12 @@
 <div class="text-right">
-<div class="icon-shopping" style="cursor: pointer;">
-   <%= current_cart.lineitems.present? ? ("<span style='position: relative;left: -20px;'>#{current_cart.lineitems.count} Items in Your Cart</span>".html_safe) : ("<span style='position: relative;left: -15px;'>Your Cart Is Empty</span>".html_safe) %>
- </div>
- </div>
 
+<%= link_to ('cart<span class="glyphicon glyphicon-shopping-cart"> </span>').html_safe, cart_path(current_cart) %>
+   <%= current_cart.lineitems.present? ? ("<span style='position: relative;right: -3px;'>#{current_cart.lineitems.count}</span>".html_safe) : ("<span style='position: relative;left: -15px;'></span>".html_safe) %>
+
+ </div>
+ <div class="text-center">
+<p><%= render 'stickers/search' %></p>
+</div>
 <%= form_tag stores_path, :id => 'search_form', :method => :get do %>
  <%= select_tag :category, options_for_select([["Stickers",""]]+Category.all.map{|a| a.name}),class: "btn btn-success"  %>
 <% end %>
