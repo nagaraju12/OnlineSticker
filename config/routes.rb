@@ -10,7 +10,11 @@ Rails.application.routes.draw do
  resources :banners
  resources :orders
  get "lineitems/update"
- resources :stores
+ resources :stores do
+ collection do
+ 	get :item_display
+ end
+end
  resources :lineitems
  resources :carts
  resources :categories

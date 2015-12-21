@@ -8,11 +8,12 @@
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
+     <th>Stickers</th>
       <th>Name</th>
       <th>Description</th>
       <th>Price</th> 
       <th>Quantity</th>
-      <th>Stickers</th>
+     
    <th>Caption part</th>
       <th colspan="3"></th>
     </tr>
@@ -20,14 +21,15 @@
   <tbody>
     <% @stickers.each do |sticker| %>
       <tr>
+           <td><% sticker.images.each do |image| %>
+<%= link_to  image_tag(image.image.url, :height => 50, :width =>80 ), sticker_path(sticker.id) %>
+
+<% end %></td>
         <td><%=link_to sticker.name, sticker_path(sticker.id) %></td>
         <td><%= sticker.description %></td>
         <td><%= sticker.price %></td>
         <td><%= sticker.quantity %></td>
-      <td><% sticker.images.each do |image| %>
-<%= link_to  image_tag(image.image.url, :height => 50, :width =>80 ), sticker_path(sticker.id) %>
-
-<% end %></td>
+ 
 <td><%= link_to 'Show', sticker %>
         <%= link_to 'Edit', edit_sticker_path(sticker) %>
       <%#= button_to 'Add to Cart', lineitems_path(sticker_id: sticker) %>

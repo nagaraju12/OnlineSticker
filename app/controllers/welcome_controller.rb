@@ -12,4 +12,4 @@ def about
 		@stickers= Sticker.all
    end
 
-end
+end      

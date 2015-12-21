@@ -8,6 +8,7 @@
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
+  
     	<th>Sticker</th>
       <th>Sticker Name</th>
       <th>Price</th> 
@@ -20,8 +21,10 @@
   <tbody>
 <% @cart.lineitems.each do |item| %>
 <tr>
+
   <td><%=  image_tag(item.sticker.images.first.image.url, :height => 90, :width =>80) %></td>
 <td><%= item.sticker.name %></td>
+
  <td class="item_price"><%= number_to_currency(item.unit_price) %></td>
      
                       <td class="a-center movewishlist"><%= number_field_tag :qty, item.quantity, maxlength: "12", id: "cart-qty", class: "input-text qty", title: "Qty", size: '5', min: '1', max: '99', data: { item_id: item.id } %></td>
@@ -40,9 +43,9 @@
 <tbody>
   <tr>
 <div class="col-md-5 col-md-offset-4">
-<div class="pull-right"><td><h1>Grand Total
+<div class="pull-left"><td><h1>Grand Total
 
-:<%= number_to_currency(@cart.total_price) %></td></div>
+= <%= number_to_currency(@cart.total_price) %></td></div>
 
 
   </tr></h1>
@@ -53,15 +56,15 @@
 </tr>
 
     </tbody>
-    <div class="text-right">
+    <div class="text-left">
     <td><%= button_to "Place Order>",new_order_path, :method => "get" ,class: "btn btn-warning" %>
  </div>
  </td>
  </div>
 
  <style>
-   div.text-right{
-     float: right;
+   div.text-left{
+     float: left;
    }
 
   </style>
