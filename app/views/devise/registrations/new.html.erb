@@ -9,16 +9,17 @@
       <%= f.hidden_field :role, :value => params[:role] %>
 
 
-
       <%= f.label :name %><br/>
-   <div class="form-group">
-          <%= f.text_field :name, placeholder: "Name", class: "form-control input-lg", label: false, autofocus: true, :required =>true %>
-        </div>
+  <div class="input-group">
+          <span class="input-group-addon glyphicon glyphicon-user"></span>
+          <%= f.text_field :name, placeholder: "Name", class: "form-control input-lg", label: false, :required =>true %>
+        </div><br/>
 
-  <%= f.label :email %><br/>
-   <div class="form-group">
-          <%= f.text_field :email, placeholder: "Email", class: "form-control input-lg", label: false, :required =>true %>
-        </div>
+    <%= f.label :email %><br/>
+  <div class="input-group">
+          <span class="input-group-addon glyphicon glyphicon-envelope"></span>
+          <%= f.email_field :email, placeholder: "Email", class: "form-control input-lg", label: false, :required =>true %>
+        </div><br/>
 
 
   <div class="field">
@@ -26,14 +27,18 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br/>
-   <div class="form-group">
+      <div class="input-group">
+          <span class="input-group-addon glyphicon glyphicon-hand-right"></span>
           <%= f.password_field :password, placeholder: "Password", class: "form-control input-lg", label: false, :required =>true %>
-        </div>
+        </div><br/>
   </div>
 
   <%= f.label :password_confirmation %><br/>
-   <div class="form-group">
-          <%= f.password_field :password_confirmation, placeholder: "Password_Confirmation", class: "form-control input-lg", label: false, :required =>true %>
+   <div class="input-group">
+          <span class="input-group-addon glyphicon glyphicon-hand-right"></span>
+          <%= f.password_field :password_confirmation, placeholder: "Password_confirmation", class: "form-control input-lg", label: false, :required =>true %>
+        </div><br/>
+  </div>
         </div>
 
   <%= f.submit "Sign Up",class: "btn btn-primary"%>

@@ -1,8 +1,8 @@
-<%= link_to 'Home',   root_path %>
+<%= link_to ('Home <span class="glyphicon glyphicon-home"> </span>').html_safe,   root_path %>
 <%= link_to 'About_us', about_path %> 
-<%= link_to 'Contact_us', new_contact_path %>
+<%= link_to ('Contact <span class="glyphicon glyphicon-phone-alt"> </span>').html_safe, new_contact_path %>
 <%#= link_to "stickers",  listing_stickers_path, :remote => true %>
-<%= link_to "Stickers",  stores_path %>
+<%= link_to ('Stickers <span class="glyphicon glyphicon-picture"> </span>').html_safe,  stores_path %>
 
 
  

@@ -24,7 +24,7 @@ end
 		@contact= Contact.new(contact_params)
 		UserMailer.welcome_email(@contact).deliver
 		if @contact.save
-			redirect_to @contact
+			redirect_to root_path
 		else
 			render "new"
 		end

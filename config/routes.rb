@@ -9,7 +9,7 @@ Rails.application.routes.draw do
  resources :contacts
  resources :banners
  resources :orders
-
+ get "lineitems/update"
  resources :stores
  resources :lineitems
  resources :carts do
