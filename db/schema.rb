@@ -66,9 +66,7 @@ ActiveRecord::Schema.define(version: 20151215070655) do
     t.integer  "order_id",   limit: 4
   end
 
-  add_index "lineitems", ["cart_id"], name: "fk_rails_733d199599", using: :btree
   add_index "lineitems", ["order_id"], name: "fk_rails_c468018124", using: :btree
-  add_index "lineitems", ["sticker_id"], name: "fk_rails_ba2e00665c", using: :btree
 
   create_table "orders", force: :cascade do |t|
     t.string   "name",          limit: 255
@@ -136,7 +134,5 @@ ActiveRecord::Schema.define(version: 20151215070655) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "lineitems", "carts"
   add_foreign_key "lineitems", "orders"
-  add_foreign_key "lineitems", "stickers"
 end

@@ -18,12 +18,12 @@ end
 	end
 
 	def create
-		@sticker= Sticker.new(sticker_params)#.merge(user_id:current_user.id))
+		@sticker= Sticker.new(sticker_params.merge(user_id:current_user.id))
 	@status = @sticker.status
 		1.times{@sticker.images.build} if @sticker.images.blank?
 		if @sticker.save
 
-			redirect_to stickers_path, :notice => "Successfully created sticker."
+			redirect_to stickers_path #:notice => "Successfully created sticker."
 			
 		else
 			render "new"
