@@ -16,7 +16,7 @@ layout :layout?
 		@banner= Banner.new(banner_params)
 			1.times{@banner.images.build} if @banner.images.blank?
 		if @banner.save
-			redirect_to @banner
+			redirect_to banners_path
 		else
 			render "new"
 		end

@@ -1,7 +1,7 @@
 <div class="text-right">
 
 <%= link_to ('cart<span class="glyphicon glyphicon-shopping-cart"> </span>').html_safe, cart_path(current_cart) %>
-   <%= current_cart.lineitems.present? ? ("<span style='position: relative;right: -3px;'>#{current_cart.lineitems.count}</span>".html_safe) : ("<span style='position: relative;left: -15px;'></span>".html_safe) %>
+   <%= current_cart.lineitems.present? ? (("<span style='position: relative;right: -3px;'>#{current_cart.lineitems.count}</span>".html_safe)): (("<span style='position: relative;left: -15px;'></span>".html_safe)) %>
 
  </div>
  <div class="text-center">

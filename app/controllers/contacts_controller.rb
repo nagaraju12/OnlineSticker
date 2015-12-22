@@ -17,7 +17,7 @@ end
 
 	def create
 		@contact= Contact.new(contact_params)
-		UserMailer.welcome_email(@contact).deliver
+		UserMailer.contact_email(@contact).deliver
 		if @contact.save
 			redirect_to root_path
 		else

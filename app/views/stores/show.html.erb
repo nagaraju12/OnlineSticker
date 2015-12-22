@@ -4,6 +4,7 @@
  <div class="col-md-4">
 
 <%=link_to image_tag(@sticker.images.first.image.url, :height => 350, :width =>350) %><br><br>
+
 <%= image_tag(@sticker.images.first.image.url, :height => 40, :width =>50) %></div>
 <div class="colum">
  <div class="col-md-4"><br>
@@ -21,20 +22,21 @@
             <td><strong>Description</strong></td>
             <td><%= @sticker.description %></td>
             </tr>
-        <td><strong>Price</strong></td>
-          <td><%= @sticker.price %></td>
+        <td><strong>Price </strong></td>
+          <td>$<%= @sticker.price %></td>
        </tr>
        <tr>
      <%= form_for @sticker, html: { multipart: true } do |f| %>
-      <td><strong>Quantity => </strong></td>
+      <td><strong>Quantity </strong></td>
       <td><div class="field">
 <%= f.select :quantity, Sticker::Quantity, prompt: '1' %>
 </div> 
 <% end %></td>
 </tr> 
 <td><%= button_to 'Add to Cart', lineitems_path(:sticker_id => @sticker.id),class: "btn btn-success"  %></td>
-
-<td><%= link_to 'Buy Now>',new_order_path,class: "btn btn-warning"  %> </td>       
+ 
+<td><%= link_to 'Buy Now',new_order_path,class: "btn btn-warning"  %> </td> 
+     
 </td>  
 </td>
 </tr>
@@ -49,3 +51,10 @@
   <div class="col-md-6 col-md-offset-1" >
 
  </div>
+ <style>
+.floating {
+  display:inline-block;
+                  margin: 10px;
+                  }
+
+                 </style>

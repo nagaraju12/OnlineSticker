@@ -30,41 +30,47 @@
                       <td class="a-center movewishlist"><%= number_field_tag :qty, item.quantity, maxlength: "12", id: "cart-qty", class: "input-text qty", title: "Qty", size: '5', min: '1', max: '99', data: { item_id: item.id } %></td>
                       
 
-<td colspan="2"><%= number_to_currency(item.total_price) %></td>
+<td colspan="2"><%= number_to_currency(item.total_price) %>
   <td><%= link_to ('<span class="glyphicon glyphicon-trash"> </span>').html_safe, cart_path(item) , method: :delete, data: { confirm: 'Are you sure?'} %></td>  
-</tr>
-    <td><%#= link_to 'Destroy', @lineitem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>  
 <% end %>
-</td>
+
 </tbody>
+ <tr>
+<div class="col-md-5 col-md-offset-4">
+<div class="floating"><td><td><td><td><td><h4>Grand Total=<%= number_to_currency(@cart.total_price) %></td></td></td></td></td></h4></div></td></td></td></td></td>
+  </tr>
 </table>
- <td><%= button_to "<Continue Shoping" ,stores_path, :method => "get",class: "btn btn-success" %></td><br>
+   <div class="text-right">
+ <td>
+ <div class="floating"><%= button_to "Continue Shoping" ,stores_path, :method => "get",class: "btn btn-success" %></div>
+
+<div class="floating"><%= button_to "Place Order",new_order_path, :method => "get" ,class: "btn btn-warning" %></div></li></td></div>
  <table class="table table-bordered table-striped">
 <tbody>
-  <tr>
-<div class="col-md-5 col-md-offset-4">
-<div class="pull-left"><td><h1>Grand Total
-
-= <%= number_to_currency(@cart.total_price) %></td></div>
-
-
-  </tr></h1>
+ 
 </tbody>
-
 </div>
 </td></div></div></tr></tbody></table>
 </tr>
-
-    </tbody>
-    <div class="text-left">
-    <td><%= button_to "Place Order>",new_order_path, :method => "get" ,class: "btn btn-warning" %>
+  
+    
  </div>
- </td>
+
  </div>
 
  <style>
-   div.text-left{
-     float: left;
+   div.text-right{
+     float: right;
    }
 
-  </style>
+  </style><br>
+  
+  <style>
+.floating {
+  display:inline-block;
+                  margin: 4px;
+                  }
+
+                 </style>
+
