@@ -7,16 +7,20 @@
  <div class="text-center">
 <p><%= render 'stickers/search' %></p>
 </div>
-<%= form_tag stores_path, :id => 'search_form', :method => :get do %>
- <%= select_tag :category, options_for_select([["Stickers",""]]+Category.all.map{|a| a.name}),class: "btn btn-success"  %>
-<% end %>
-
-<script>
-  $('#category').change(function()
- {
-     $('#search_form').submit();
- });
-</script>
+<div class="container"> 
+                  
+                        <li class="dropdown"><a href="stores_path" class="dropdown-toggle" data-toggle="dropdown" >Sticker</a>
+                            <ul class="dropdown-menu">
+                                <li><a href=<% Category.all.each do |category| %>
+<li><%= link_to category.name,  stores_path(:category => category.name) %></li>
+<% end %></a></li>
+                                
+                            </ul>
+                        </li>
+    
+                    </ul>
+                </div>
+           
 <style>
    div.text-right{
      float: right;
