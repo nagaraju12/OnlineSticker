@@ -2,7 +2,24 @@
 <%= link_to 'About_us', about_path %> 
 <%= link_to ('Contact <span class="glyphicon glyphicon-phone-alt"> </span>').html_safe, new_contact_path %>
 <%#= link_to "stores",  item_display_stores_path, :remote => true %>
-<%= link_to ('Stickers <span class="glyphicon glyphicon-picture"> </span>').html_safe,  stores_path %>
+<%= link_to ('Sticker <span class="glyphicon glyphicon-picture"> </span>').html_safe,  stores_path %>
+
+<td><li class="dropdown"><a href="stores_path" class="dropdown-toggle" data-toggle="dropdown",class: "btn btn-success" >ListedSticker <span class="glyphicon glyphicon-picture"></a>
+                            <ul class="dropdown-menu">
+  <li><a href=<% Category.all.each do |category| %>
+<li><%= link_to category.name,  stores_path(:category => category.name)  %></li>
+<% end %></a></li></ul>
+                        </li>
+    
+                    </ul>
+             
+               
+     
+   </div></td>
+<div class="text-center">
+
+</div>
+
 
 
  

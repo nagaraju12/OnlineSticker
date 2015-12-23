@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-	#before_filter :is_login?
+  before_filter :is_login?,only: [:index]
 layout :layout?, only: [:index]
 def index
   @contacts = Contact.all

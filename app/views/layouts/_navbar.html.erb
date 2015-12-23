@@ -1,24 +1,6 @@
 <div class="text-right">
 
-<%= link_to ('cart<span class="glyphicon glyphicon-shopping-cart"> </span>').html_safe, cart_path(current_cart) %>
-   <%= current_cart.lineitems.present? ? (("<span style='position: relative;right: -3px;'>#{current_cart.lineitems.count}</span>".html_safe)): (("<span style='position: relative;left: -15px;'></span>".html_safe)) %>
+
 
  </div>
- <div class="text-center">
-<p><%= render 'stickers/search' %></p>
-</div>
-<%= form_tag stores_path, :id => 'search_form', :method => :get do %>
- <%= select_tag :category, options_for_select([["Stickers",""]]+Category.all.map{|a| a.name}),class: "btn btn-success"  %>
-<% end %>
-
-<script>
-  $('#category').change(function()
- {
-     $('#search_form').submit();
- });
-</script>
-<style>
-   div.text-right{
-     float: right;
-}
-  </style>
+ 

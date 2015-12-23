@@ -1,5 +1,6 @@
 class StickersController < ApplicationController
 	layout :layout?
+	  before_filter :is_login?,only: [:new,:index,:edit,:show]
 def index
 	if params[:category].blank?
 @stickers=Sticker.all.order("created_at ASC")

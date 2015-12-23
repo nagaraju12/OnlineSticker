@@ -1,5 +1,5 @@
 class BannersController < ApplicationController
-#before_filter :is_login?
+ before_filter :is_login?
 layout :layout?
 	def index
 		@banners= Banner.all
