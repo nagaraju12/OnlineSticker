@@ -17,22 +17,22 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 *{
-	margin: 12;
-	padding: 12;
+    margin: 12;
+    padding: 12;
 }
 
 #nav{
-	width: 100%;
-	height: 84px;
-	background: yellowgreen;
-	float: left;
+    width: 100%;
+    height: 80px;
+    background: #006699;
+    float: left;
 }
 
 #page_nav a, #sign_in a{
-	line-height: 40px;
-	color: #fff;
-	padding: 0 10px 0 10px;
-	text-decoration: none;
+    line-height: 60px;
+    color: #fff;
+    padding: 0 20px 0 20px;
+    text-decoration: none;
 
 }
 #element {
@@ -42,22 +42,22 @@
     height: 346px;
 }
 #page_nav{
-	margin:0 0 0 5%;
-	float: left;
+    margin:0 0 0 5%;
+    float: left;
 }
 
 #sign_in{
-	float: right;
-	margin:0 5% 0 0;
+    float: right;
+    margin:0 5% 0 0;
 }
 
 #main_wrap{
-	width: 90%;
-	float: left;
-	margin: 20px 5% 0 5%;
+    width: 90%;
+    float: left;
+    margin: 20px 5% 0 5%;
 }
 #footer {
-	 position:fixed;
+     position:fixed;
     left:0px;
     bottom:0px;
     clear:both;
@@ -67,21 +67,6 @@
     background-color:#e8e8e8;
     border-top:solid 1px #CCC;
 }
-#pull-right {
+pull-right {
   float: right !important;
 }
-
-.container {
-
-    margin:0 0 5% 80%;
-	    float: left;
-	    color: #000;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-    color: #000;
-    margin-top: 0;
-    background: #000;
- }
-
