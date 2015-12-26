@@ -31,7 +31,8 @@
  <%#= link_to "dashboard", dashboards_index_path %>
 <% else %>
 <%#= image_tag("cart2.png", alt: "File Name Fancy", size: "50*80")%><%= link_to ('Sign in <span class="glyphicon glyphicon-user"> </span>').html_safe, new_user_session_path(current_user)  %>
-<%= link_to ('Sign up <span class="glyphicon glyphicon-user"> </span>').html_safe,  new_user_registration_path(:role => "buyer") %>
+<%= link_to ('Sign up <span class="
+glyphicon glyphicon-folder-open"> </span>').html_safe,  new_user_registration_path(:role => "buyer") %>
 
 
 <%#= link_to ('Cart <span class="glyphicon glyphicon-shopping-cart"> </span>').html_safe, cart_path(current_cart) %>

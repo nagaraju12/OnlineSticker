@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
   before_filter :is_login?,only: [:index]
-layout :layout?, only: [:index]
+layout :layout?, only: [:index,:show,:edit,:destroy]
 def index
   @contacts = Contact.all
     if params[:search]
