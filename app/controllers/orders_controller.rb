@@ -6,7 +6,7 @@ def index
     
   end
 
-   def new
+  def new
     @cart = current_cart
     if @cart.lineitems.empty?
       redirect_to carts_path, :notice => "Your cart is empty"
@@ -21,7 +21,6 @@ def index
     end
   end
        
-
 
   def create
     @order = Order.new(order_params)
