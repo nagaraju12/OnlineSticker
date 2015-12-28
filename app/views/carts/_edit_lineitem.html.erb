@@ -1,0 +1,4 @@
+<%= form_for @lineitem, :url => update_lineitem_cart_path(@lineitem), :method => 'PUT', :html => {:id => "search-query"}, :remote => true do |f| %>
+  <%= f.text_field :quantity, :style => 'width: 10px;' %>
+  <%= f.submit "Add" %>
+<% end %>

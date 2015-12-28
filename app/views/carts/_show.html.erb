@@ -1,0 +1,73 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+<h1><%#= button_to "Continue Shoping" , stores_path, :method => "get",class: "btn btn-info btn-lg" %></h1>
+
+ <h3>Your Cart</h3>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+  
+        <th>Sticker</th>
+      <th>Sticker Name</th>
+      <th>Price</th> 
+      <th>Quantity</th>
+      <th>SubTotal</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+<% @cart.lineitems.each do |item| %>
+<tr>
+
+  <td><%=  image_tag(item.sticker.images.first.image.url, :height => 90, :width =>80) %></td>
+<td><%= item.sticker.name %></td>
+
+ <td class="item_price"><%= number_to_currency(item.unit_price) %></td>
+     
+                      <td class="a-center movewishlist"><%= number_field_tag :qty, item.quantity, maxlength: "12", id: "cart-qty", class: "input-text qty", title: "Qty", size: '5', min: '1', max: '99', data: { item_id: item.id } %></td>
+                      
+
+<td colspan="2"><%= number_to_currency(item.total_price) %>
+  <td><%= link_to ('<span class="glyphicon glyphicon-trash"> </span>').html_safe, cart_path(item) , method: :delete, data: { confirm: 'Are you sure?'} %></td>
+   
+</tr> 
+
+<% end %>
+
+</tbody>
+ <tr>
+
+<div class="col-md-5 col-md-offset-4">
+<div class="floating"><td><td><td><td><h4>Grand Total<td> <%= number_to_currency(@cart.total_price) %></td></td></td></td></td></h4></div></td></td></td></td></td>
+  </tr>
+</table>
+   <div class="text-right">
+ <td>
+ <div class="floating"><%= button_to "Continue Shoping" ,stores_path, :method => "get",class: "btn btn-success" %></div>
+
+<div class="floating"><%= button_to "Place Order",new_order_path, :method => "get" ,class: "btn btn-warning" %></div></li></td></div>
+ <table class="table table-bordered table-striped">
+<tbody>
+ 
+
+</div>
+</td></div></div></tr></tbody></table>
+</tr>  
+ </div>
+ </div>
+ <style>
+   div.text-right{
+     float: right;
+   }
+  </style><br>
+
+  <style>
+.floating {
+  display:inline-block;
+                  margin: 4px;
+                  }
+
+                 </style>

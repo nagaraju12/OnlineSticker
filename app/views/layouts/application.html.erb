@@ -32,7 +32,7 @@
 <% else %>
 <%#= image_tag("cart2.png", alt: "File Name Fancy", size: "50*80")%>
 <%= form_tag stores_path, :id => 'search_form', :method => :get do %>
- <%= select_tag :category, options_for_select([["stickers",""]]+Category.all.map{|a| a.name}), :style => "border: 1px solid gray;"  %>
+ <%= select_tag :category, options_for_select([["stickers",""]]+Category.all.map{|a| a.name}), :style => "border: 1px solid green;" ,class: "btn btn-warning btn-sm" %>
 <% end %>
 <style>
 	#search_form{

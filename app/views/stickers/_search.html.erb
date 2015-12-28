@@ -1,11 +1,5 @@
-	<div class="text-center">
+
  <%=  form_tag stores_path(), :method => 'get' do %>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", :name => nil,class: "btn btn-success" %> 
 <% end %>
-</div>
-<style>
-   div.text-center{
-     float: center;
-}
-  </style>

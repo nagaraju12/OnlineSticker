@@ -16,7 +16,13 @@ Rails.application.routes.draw do
  end
 end
  resources :lineitems
- resources :carts
+ resources :carts do
+    member do
+      get :edit_lineitem
+      get :update_lineitem
+    end
+  end
+
  resources :categories
  resources :stickers do
    collection do
