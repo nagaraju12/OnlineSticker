@@ -1,6 +1,6 @@
 class Order < ActiveRecord::Base
 	has_many :sticker
 	has_many :cart
-	belongs_to :lineitem
+	has_many :lineitem
 	mount_uploader :attachment, AttachmentUploader 
 end
