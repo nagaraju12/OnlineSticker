@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   layout :layout?, only: [:index]
-  
+    before_filter :is_login?,only: [:index,:edit, :show]
 def index
     @orders = Order.all
     

@@ -21,12 +21,15 @@
 
  <% if current_user and current_user.role == 'admin' %>
  <%#= link_to "Dashboard", dashboards_index_path %>
-<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+<%= link_to ('sign out <span class="glyphicon glyphicon-off"></span>').html_safe, destroy_user_session_path, :method => :delete %>
 
  
+
+
+
 <% else %>
 <%#= link_to 'Sign in', new_user_session_path(current_user)  %>
-<%#= link_to "Sign up",  new_user_registration_path(:role => "buyer") %>
+
 <%#= button_to "Sign_up" ,  new_user_registration_path(:role => "bayer"), :method => "get" %>
 
 <% end %>

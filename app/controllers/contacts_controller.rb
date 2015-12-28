@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
-	#before_filter :is_login?
-layout :layout?, only: [:index]
+  before_filter :is_login?,only: [:index]
+layout :layout?, only: [:index,:show,:edit,:destroy]
 def index
   @contacts = Contact.all
     if params[:search]
@@ -17,7 +17,7 @@ end
 
 	def create
 		@contact= Contact.new(contact_params)
-		UserMailer.welcome_email(@contact).deliver
+		UserMailer.contact_email(@contact).deliver
 		if @contact.save
 			redirect_to root_path
 		else

@@ -1,28 +1,6 @@
-<div class="text-right">
 
-<%= link_to ('cart<span class="glyphicon glyphicon-shopping-cart"> </span>').html_safe, cart_path(current_cart) %>
-   <%= current_cart.lineitems.present? ? ("<span style='position: relative;right: -3px;'>#{current_cart.lineitems.count}</span>".html_safe) : ("<span style='position: relative;left: -15px;'></span>".html_safe) %>
-
- </div>
  <div class="text-center">
 <p><%= render 'stickers/search' %></p>
 </div>
-<div class="container"> 
-                  
-                        <li class="dropdown"><a href="stores_path" class="dropdown-toggle" data-toggle="dropdown" >Sticker</a>
-                            <ul class="dropdown-menu">
-                                <li><a href=<% Category.all.each do |category| %>
-<li><%= link_to category.name,  stores_path(:category => category.name) %></li>
-<% end %></a></li>
-                                
-                            </ul>
-                        </li>
-    
-                    </ul>
-                </div>
-           
-<style>
-   div.text-right{
-     float: right;
-}
-  </style>
+
+   

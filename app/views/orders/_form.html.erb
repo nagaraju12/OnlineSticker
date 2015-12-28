@@ -26,9 +26,10 @@
     </div>
 
     
-    <div class="field">
+    
     <%= f.label :Rc_book_of_car %>
-    <%= f.file_field :attachment %>
+    <div class="form-group">
+        <%= f.file_field :attachment, placeholder: "Attachment", class: "form-control input-lg", label: false, :required =>true %>
     </div>
 
     <%= f.label :Vehicle_no %><br/>

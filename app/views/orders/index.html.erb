@@ -35,8 +35,9 @@
          <td><%= order.vehicle_model%></td>
           <td><%= order.vehicle_no%></td>
            <td><%= order.vehicle_make%></td>
-        <td><%= link_to " Upload", order.attachment_url %></td>
-        <td><%#= link_to 'Edit', edit_order_path(order) %><br><%= link_to "Delete",  order, method: :delete, confirm: "Are you sure that you wish to delete #{order.name}?" %></td>
+        <td><%= link_to ('<span class="glyphicon glyphicon-paperclip"> </span>').html_safe, order.attachment_url %></td>
+       <td><%= link_to ('<span class="glyphicon glyphicon-trash"> </span>').html_safe,  order, method: :delete, confirm: "Are you sure that you wish to delete #{order.name}?" %></td>
+
       </tr>
     <% end %>
   </tbody>
