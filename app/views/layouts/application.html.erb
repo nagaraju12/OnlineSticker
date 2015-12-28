@@ -40,7 +40,7 @@
 <%#= link_to "Sign up",  new_user_registration_path(:role => "buyer") %>
 
 <%#= image_tag("cart2.png", alt: "File Name Fancy", size: "50*80")%>
-<%= link_to ("cats(#{current_cart.lineitems.count})"),cart_path(current_cart) %>
+<%= link_to ("carts(#{current_cart.lineitems.count})"),cart_path(current_cart) %>
 <%= link_to ('Sign in <span class="glyphicon glyphicon-user"> </span>').html_safe, new_user_session_path(current_user)  %>
 <%= link_to ('Sign up <span class="
 
