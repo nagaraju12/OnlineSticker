@@ -31,7 +31,7 @@ class CartsController < ApplicationController
   private
    
     def set_cart
-      @cart = Cart.find(current_cart)
+      @cart = current_cart
     end
 
     def cart_params

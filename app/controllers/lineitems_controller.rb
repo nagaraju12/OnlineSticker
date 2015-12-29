@@ -22,9 +22,9 @@ class LineitemsController < ApplicationController
 
   def create
 sticker = Sticker.find(params[:sticker_id])
-@cart = current_cart
-#session[:cart_id] = @cart.id
-@lineitem = current_cart.add_sticker(sticker.id)
+@cart = session[:cart] ? current_cart : Cart.create
+session[:cart] = @cart.id
+@lineitem = @cart.add_sticker(sticker.id)
 respond_to do |format|
 if @lineitem.save
 format.html { redirect_to @lineitem.cart,notice: '' }
