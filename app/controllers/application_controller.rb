@@ -36,9 +36,6 @@ def after_sign_in_path_for(resource_or_scope)
    end
 end
 
- private
-
-
 def current_cart
   cart = Cart.find(session[:cart_id])
 rescue ActiveRecord::RecordNotFound
