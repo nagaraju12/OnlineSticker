@@ -2,11 +2,11 @@ class CartsController < ApplicationController
  before_action :set_cart, only: [:show, :edit, :update, :destroy]
   
   def index
-    @carts = Cart.all
-
+    @cart = current_cart   
   end
   
   def show
+
   end
   
   def update
@@ -20,12 +20,11 @@ class CartsController < ApplicationController
       end
     end
   end
- 
 
   def destroy
     @item = Lineitem.find(params[:id])
     @item.destroy
-    redirect_to cart_path(current_cart)
+    redirect_to carts_path(current_cart)
   end
 
   private

@@ -20,14 +20,14 @@ class LineitemsController < ApplicationController
   def edit
   end
 
-  def create
+   def create
 sticker = Sticker.find(params[:sticker_id])
-@cart = session[:cart] ? current_cart : Cart.create
-session[:cart] = @cart.id
+@cart = session[:cart_id] ? current_cart : Cart.create
+session[:cart_id] = @cart.id
 @lineitem = @cart.add_sticker(sticker.id)
 respond_to do |format|
 if @lineitem.save
-format.html { redirect_to @lineitem.cart,notice: '' }
+format.html { redirect_to carts_path,notice: '' }
 format.json { render action: 'show', status: :created, location: @lineitem }
 format.js{ @current_item = @lineitem }
 else
