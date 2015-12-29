@@ -28,11 +28,11 @@
  
 <% else %>
 <%= form_tag stores_path, :id => 'search_form', :method => :get do %>
- <%= select_tag :category, options_for_select([["stickers",""]]+Category.all.map{|a| a.name}), :style => "border: 1px solid green;" ,class: "btn btn-warning btn-sm" %>
+ <%= select_tag :category, options_for_select([["stickers",""]]+Category.all.map{|a| a.name}), :style => "border: 1px solid green;" ,class: "btn btn-primary" %>
 <% end %>
 <style>
 	#search_form{
-		left: -98px;
+		left: -130px;
     margin-top: -38px;
     position: relative;
     top: 45px;
@@ -47,15 +47,12 @@
  });
 </script>
 
-<%= link_to ("Carts (#{current_cart.lineitems.count})<span class='glyphicon glyphicon-shopping-cart'> </span>").html_safe,cart_path(current_cart) %>
+<%= link_to ("Carts (#{
+current_cart.lineitems.count})<span class='glyphicon glyphicon-shopping-cart'> </span>").html_safe,cart_path(current_cart) %>
 <%= link_to ('Sign in <span class="glyphicon glyphicon-user"> </span>').html_safe, new_user_session_path(current_user)  %>
 <%= link_to ('Sign up <span class="glyphicon glyphicon-folder-open"> </span>').html_safe,  new_user_registration_path(:role => "buyer") %>
-
-
-
-
 <% end %>
-</div><br>
+</div>
 
 </nav>
 
