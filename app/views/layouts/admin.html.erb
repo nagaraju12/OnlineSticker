@@ -20,7 +20,7 @@
 <div id= "sign_in" >
 
  <% if current_user and current_user.role == 'admin' %>
- <%#= link_to "Dashboard", dashboards_index_path %>
+ 
 <%= link_to ('sign out <span class="glyphicon glyphicon-off"></span>').html_safe, destroy_user_session_path, :method => :delete %>
 
  

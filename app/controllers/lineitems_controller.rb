@@ -23,7 +23,7 @@ class LineitemsController < ApplicationController
   def create
 sticker = Sticker.find(params[:sticker_id])
 @cart = current_cart
-session[:cart_id] = @cart.id
+#session[:cart_id] = @cart.id
 @lineitem = current_cart.add_sticker(sticker.id)
 respond_to do |format|
 if @lineitem.save
