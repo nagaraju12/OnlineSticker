@@ -36,16 +36,11 @@ def after_sign_in_path_for(resource_or_scope)
    end
 end
 
-def current_cart(create_if_not_exist=false)
-cart = Cart.find(session[:cart]) if session[:cart]
-unless cart
-if create_if_not_exist
-cart = Cart.create
-else
-cart = Cart.new
-end
-end
-cart
+def current_cart
+  cart = Cart.find(session[:cart_id])
+rescue ActiveRecord::RecordNotFound
+  cart = Cart.create
+  session[:cart_id] = cart.id
 end
 end
 
