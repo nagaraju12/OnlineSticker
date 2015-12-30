@@ -21,10 +21,7 @@
 
  <% if current_user and current_user.role == 'admin' %>
  
-<%= link_to ('sign out <span class="glyphicon glyphicon-off"></span>').html_safe, destroy_user_session_path, :method => :delete %>
-
- 
-
+<%= link_to ('Sign out <span class="glyphicon glyphicon-off"></span>').html_safe, destroy_user_session_path, :method => :delete %>
 
 
 <% else %>

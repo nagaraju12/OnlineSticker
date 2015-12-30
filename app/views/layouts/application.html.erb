@@ -33,7 +33,7 @@
 <style>
     #dropdown{
         left: -130px;
-    margin-top: -38px;
+    margin-top: -45px;
     position: relative;
     top: 45px;
     width: 102px;
@@ -49,7 +49,7 @@
 
 <%= link_to ("Carts (#{
 current_cart.lineitems.count})<span class='glyphicon glyphicon-shopping-cart'> </span>").html_safe,cart_path(current_cart) %>
-<%= link_to ('<span class="glyphicon glyphicon-user"> </span> Signin/ Signup ' ).html_safe, new_user_session_path(current_user)  %>
+<%= link_to ('<span class="glyphicon glyphicon-user"> </span> Sign in / Sign up ' ).html_safe, new_user_session_path(current_user)  %>
 <%#= link_to ('<span class="glyphicon glyphicon-folder-open"> </span> ').html_safe,  new_user_registration_path(:role => "buyer") %>
 <% end %>
 </div>
