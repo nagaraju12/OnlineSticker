@@ -6,12 +6,10 @@ class LineitemsController < ApplicationController
     @stickers = Sticker.all
   end
 
-  
   def show
    
   end
 
-  
   def new
     @lineitem = Lineitem.new
   end

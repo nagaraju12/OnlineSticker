@@ -3,6 +3,7 @@ has_many :images, :as => :imagable
 validates :description,:category_id, presence: true
 validates_uniqueness_of :name
 has_many :users
+ Quantity = ["1","2","3"]
  #validates :status, :presence => true
 	belongs_to :category
 	accepts_nested_attributes_for :images, :allow_destroy => true, :reject_if=>:all_blank

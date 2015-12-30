@@ -5,7 +5,7 @@ Rails.application.routes.draw do
  get "/about", :to => "welcome#about"
 
  devise_for :users 
-
+ 
  resources :contacts
  resources :banners
  resources :orders
@@ -26,7 +26,8 @@ end
  resources :categories
  resources :stickers do
    collection do
-     get :listing  
+     get :listing
+     
    end
  end
 
