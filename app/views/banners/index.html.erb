@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
-<h1><%= link_to '+New Banner', new_banner_path %></h1>
+
 
 <div class="text-right">
 <%#= button_to "Back" , dashboards_index_path, :method => "get" %>
+<h1><%= link_to '+New Banner', new_banner_path %></h1>
 </div>
 <style>
    div.text-right{
@@ -37,8 +38,11 @@
     <% end %>
   </tbody>
 </table>
- 
-
+ <style>
+   div.text-right{
+     float: right;
+}
+  </style>
 
 
 <%#= button_to "new banner", new_banner_path, :class => "button", :method => :get  %>

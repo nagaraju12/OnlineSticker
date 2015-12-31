@@ -22,19 +22,20 @@
 
     <%= f.label :Zip_code %><br/>
     <div class="form-group">
-        <%= f.text_field :zip, placeholder: "Zip code", class: "form-control input-lg", label: false, :required =>true %>
+        <%= f.number_field :zip, placeholder: "Zip code", class: "form-control input-lg", label: false, :required =>true %>
     </div>
 
     
     
     <%= f.label :Rc_book_of_car %>
     <div class="form-group">
-        <%= f.file_field :attachment, placeholder: "Attachment", class: "form-control input-lg", label: false, :required =>true %>
+        <%= f.file_field :attachment, placeholder: "Attachment", class: "
+glyphicon glyphicon-cloud-upload", label: false, :required =>true %>
     </div>
 
     <%= f.label :Vehicle_no %><br/>
     <div class="form-group">
-        <%= f.text_field :vehicle_no, placeholder: "Vehicle No", class: "form-control input-lg", label: false, :required =>true %>
+        <%= f.number_field :vehicle_no, placeholder: "Vehicle No", class: "form-control input-lg", label: false, :required =>true %>
     </div>
 
     <%= f.label :Vehicle_Model %><br/>

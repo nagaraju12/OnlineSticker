@@ -22,17 +22,20 @@ def index
   end
        
 
-  def create
-    @order = Order.new(order_params)
-UserMailer.welcome_email(@order).deliver
-    if @order.save
-       
-      redirect_to root_path, notice: "The order #{@order.name} has been uploaded."
-    else
-      render "new"
-    end
-  end
-
+def create 
+   @order = Order.new(order_params) 
+   @order.add_lineitems_from_cart(current_cart) 
+   respond_to do |format| 
+      if @order.save Cart.destroy(session[:cart_id]) 
+          session[:cart_id] = nil 
+         UserMailer.welcome_email(@order).deliver
+          format.html { redirect_to(store_url, :notice => 'Thank you for your order.') }
+      else 
+          format.html { render :action => "new" } 
+          format.xml { render :xml => @order.errors, :status => :unprocessable_entity }
+      end 
+   end 
+end
  def update
   @order = Order.find(params[:id])
   if @order.update(order_params)

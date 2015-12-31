@@ -29,7 +29,7 @@
      <%= form_for @sticker, html: { multipart: true } do |f| %>
       <td><strong>Quantity </strong></td>
       <td><div class="field">
-<%= f.select :quantity, Sticker::Quantity, prompt: '1' %>
+<%= f.number_field :quantity %>
 </div> 
 <% end %></td>
 </tr> 

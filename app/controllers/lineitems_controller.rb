@@ -18,7 +18,9 @@ class LineitemsController < ApplicationController
   def edit
   end
 
-   def create
+   
+
+def create
 sticker = Sticker.find(params[:sticker_id])
 @cart = session[:cart_id] ? current_cart : Cart.create
 session[:cart_id] = @cart.id
@@ -37,6 +39,8 @@ end
 
   
   def update
+
+    @lineitem.quantity = params[:item][:quantity]
     respond_to do |format|
       if @lineitem.update(lineitem_params)
         format.html { redirect_to @lineitem, notice: 'Line item was successfully updated.' }

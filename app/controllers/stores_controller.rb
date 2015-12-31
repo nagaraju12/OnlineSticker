@@ -14,7 +14,8 @@ end
 end
 
 def show
-
+	   #@cart = current_cart
+# @item = Lineitem.find(params[:id])
 @sticker = Sticker.find(params[:id])
 end
    def sticker_params
