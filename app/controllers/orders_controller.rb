@@ -9,7 +9,7 @@ def index
   def new
     @cart = current_cart
     if @cart.lineitems.empty?
-      redirect_to carts_path, :notice => "Your cart is empty(0)"
+      redirect_to carts_path, :notice => "Your cart is empty"
       return
     end
  
