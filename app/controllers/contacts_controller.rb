@@ -3,6 +3,7 @@ class ContactsController < ApplicationController
 layout :layout?, only: [:index,:show,:edit,:destroy]
 def index
   @contacts = Contact.all
+  
     if params[:search]
        @contacts = Contact.search(params[:search]).order("created_at DESC")
     else
@@ -13,6 +14,7 @@ end
 
 	def new
 		@contact= Contact.new
+			@cart= current_cart
 	end
 
 	def create
