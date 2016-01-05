@@ -17,7 +17,7 @@
 <div id= "page_nav" >
 <p><%= render 'layouts/header' %></p>
      </div>
-             
+            
 
 <div id= "sign_in" >
 
@@ -40,13 +40,15 @@ current_cart.lineitems.count})<span class='glyphicon glyphicon-shopping-cart'> <
 <%#= link_to ('<span class="glyphicon glyphicon-folder-open"> </span> ').html_safe,  new_user_registration_path(:role => "buyer") %>
 <% end %>
 </div>
+
   <%=  form_tag stores_path(), :method => 'get' do %>
     <%= text_field_tag :search, params[:search],class:"btn btn-default" %><%= submit_tag "Search",class:"btn btn-warning"  %>  
 <% end %>
+<%#= image_tag("images12.jpg", alt: "Fancy", size: "2150*2150")%> 
+
 </nav>
 
 <div id= "main_wrap" >
-
 
 
 <p><%#= render 'layouts/navbar' %></p>
@@ -64,6 +66,7 @@ current_cart.lineitems.count})<span class='glyphicon glyphicon-shopping-cart'> <
     top: 45px;
     width: 102px;
     }
+    #Fancy{}
 </style>
 
 <script>
