@@ -1,15 +1,15 @@
 class OrdersController < ApplicationController
   layout :layout?, only: [:index]
-    before_filter :is_login?,only: [:index,:edit, :show]
+  before_filter :is_login?,only: [:index,:edit, :show]
+
 def index
     @orders = Order.all
-    
   end
 
   def new
     @cart = current_cart
     if @cart.lineitems.empty?
-      redirect_to carts_path, :notice => "Your cart is empty(0)"
+      redirect_to new_cart_path, :notice => "Your cart is empty"
       return
     end
  

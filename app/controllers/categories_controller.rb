@@ -2,6 +2,7 @@ class CategoriesController < ApplicationController
 
 	def index
 		@categories= Category.all
+			@cart= current_cart
 	end
 
 	def new
