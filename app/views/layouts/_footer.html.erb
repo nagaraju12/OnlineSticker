@@ -1,4 +1,11 @@
 <footer class ="footer navbar-fixed bottom">
+
+
+<%#= button_to "Back" , dashboards_index_path, :method => "get" %>
+
+
+<%#= button_to "Back" , dashboards_index_path, :method => "get" %>
+
   <div class="content">
     <div class="commonrow">
       <%#= link_to image_tag("/assets/touchsecure-logo.jpg", :id => "logo"), '/' %>
@@ -25,6 +32,7 @@ Experience the exquisite craftsmanship from the new age of entrepreneurs. We sin
        <td>
           <h4>Information</h4>
           <ul>
+
            <td><%= link_to "About Us", about_path %></td><br>
            <td><%= link_to "Delivery Information", root_path %></td><br>
            <td><%= link_to "Privacy Policy", root_path %></td><br>
@@ -37,15 +45,16 @@ Experience the exquisite craftsmanship from the new age of entrepreneurs. We sin
       </ul>
     </div>
     <div class="copyright">
-      Copyright © 2014 Onlinesticker. All rights reserved.
+      Copyright © 2016 Onlinesticker. All rights reserved.
     </div>
     <div class="clearFix"></div>
   </div>
 </footer>
+</footer>
 <style>
 #footer {
     clear: both;
-    height: 310px;
+    height: 410px;
     color:#ccc;
     font-size:12px;
     position:relative;
@@ -54,3 +63,8 @@ Experience the exquisite craftsmanship from the new age of entrepreneurs. We sin
     background-color:#31353a;
 }
 </style>
+<style>
+   div.text-right{
+     float: right;
+}
+  </style>

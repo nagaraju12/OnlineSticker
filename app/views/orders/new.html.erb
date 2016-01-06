@@ -13,6 +13,11 @@
 <div class="col-md-6 col-md-offset-3">
   <div class="panel panel-default">
     <div class="panel-heading">
+        <div class="text-right">
+<h4><%= link_to ('<span class="glyphicon glyphicon-remove"> </span> ' ).html_safe, carts_path %></h4>
+
+<%#= button_to "Back" , dashboards_index_path, :method => "get" %>
+</div>
     <h2>Order Form</h2>
 
 <div class="well">
@@ -85,3 +90,8 @@ h2 {
     text-shadow: 2px 2px 5px black;
 }
 </style>
+<style>
+   div.text-right{
+     float: right;
+}
+  </style>
