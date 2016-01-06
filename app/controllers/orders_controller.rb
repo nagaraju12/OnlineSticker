@@ -24,12 +24,11 @@ def index
 
 def create 
    @order = Order.new(order_params) 
-   @order.add_lineitems_from_cart(current_cart) 
+   #@order.add_lineitems_from_cart(current_cart) 
    respond_to do |format| 
-      if @order.save Cart.destroy(session[:cart_id]) 
-          session[:cart_id] = nil 
+      if @order.save 
          UserMailer.welcome_email(@order).deliver
-          format.html { redirect_to(store_url, :notice => 'Thank you for your order.') }
+          format.html { redirect_to(root_path, :notice => 'Thank you for your order.') }
       else 
           format.html { render :action => "new" } 
           format.xml { render :xml => @order.errors, :status => :unprocessable_entity }

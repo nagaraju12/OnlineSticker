@@ -1,7 +1,7 @@
 
 <h1><%#= button_to "Continue Shoping" , stores_path, :method => "get",class: "btn btn-info btn-lg" %></h1>
 
- <h3>Your Cart</h3>
+ <h3>SHOPPING CART</h3>
 
 <table class="table table-bordered table-striped">
   <thead>
@@ -42,12 +42,12 @@
  <tr>
 
 <div class="col-md-5 col-md-offset-4">
-<div class="floating"><td><td><td><td><h4>Grand Total<td> <%= number_to_currency(@cart.total_price) %></td></td></td></td></td></h4></div></td></td></td></td></td>
+<div class="floating"><td><td><td><td><h4>Estimated Total<td> <%= number_to_currency(@cart.total_price) %></td></td></td></td></td></h4></div></td></td></td></td></td>
   </tr>
 </table>
    <div class="text-right">
  <td>
- <div class="floating"><%= button_to "Continue Shoping" ,stores_path, :method => "get",class: "btn btn-success" %></div>
+ <div class="floating"><%= button_to "Continue Shopping" ,stores_path, :method => "get",class: "btn btn-success" %></div>
 
 <div class="floating"><%= button_to "Process To Checkout",new_order_path, :method => "get" ,class: "btn btn-warning" %></div></li></td></div>
  <table class="table table-bordered table-striped">
@@ -77,6 +77,6 @@
   <style>
 .floating {
   display:inline-block;
-                  margin: 4px;
+                  margin: 0px;
                   }
 </style>

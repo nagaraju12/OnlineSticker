@@ -17,13 +17,13 @@
 <div id= "page_nav" >
 <p><%= render 'layouts/header' %></p>
      </div>
-            
+             
 
 <div id= "sign_in" >
 
 <% if current_user.present? %>
 
- <%=link_to current_user.role,"#",class:"glyphicon glyphicon-user" %>
+ Member:<%=link_to current_user.role,"#",class:"glyphicon glyphicon-user" %>
 <%= link_to ('<span class="glyphicon glyphicon-off"></span>').html_safe, destroy_user_session_path, :method => :delete %>
 
  <% elsif current_user and current_user.role == 'admin' %>
@@ -35,20 +35,23 @@
 
 
 <%= link_to ("Carts (#{
-current_cart.lineitems.count})<span class='glyphicon glyphicon-shopping-cart'> </span>").html_safe,cart_path(current_cart) %><%#=link_to (" CartPrice(#{number_to_currency(@cart.total_price)})"),carts_path(current_cart) %>
+current_cart.lineitems.count})<span class='glyphicon glyphicon-shopping-cart'> </span>").html_safe,cart_path(current_cart) %>
 <%= link_to ('<span class="glyphicon glyphicon-user"> </span> Sign in / Sign up ' ).html_safe, new_user_session_path(current_user)  %>
 <%#= link_to ('<span class="glyphicon glyphicon-folder-open"> </span> ').html_safe,  new_user_registration_path(:role => "buyer") %>
 <% end %>
 </div>
+  
 
-  <%=  form_tag stores_path(), :method => 'get' do %>
-    <%= text_field_tag :search, params[:search],class:"btn btn-default" %><%= submit_tag "Search",class:"btn btn-warning"  %>  
+<div class="center">
+<%=  form_tag stores_path(), :method => 'get' do %>
+    <%= text_field_tag :search, params[:search],placeholder: "Search Items", class:"btn btn-default" %><%= submit_tag "Search",class:"btn btn-warning"  %>  
 <% end %>
-<%#= image_tag("images12.jpg", alt: "Fancy", size: "2150*2150")%> 
+</div>
 
 </nav>
 
 <div id= "main_wrap" >
+
 
 
 <p><%#= render 'layouts/navbar' %></p>
@@ -62,14 +65,22 @@ current_cart.lineitems.count})<span class='glyphicon glyphicon-shopping-cart'> <
 </body>
 </html>
 <style>
-    #dropdown{
-        left: -130px;
+#dropdown
+  {
+    left: -130px;
     margin-top: -45px;
     position: relative;
     top: 45px;
     width: 102px;
-    }
-    #Fancy{}
+  }
+
+.center
+  {
+    display:inline-block;
+    padding: 2px 55px;
+    margin: 65px;
+  }
+
 </style>
 
 <script>
