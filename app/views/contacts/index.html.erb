@@ -27,9 +27,7 @@
           <td><%= contact.email %></td>
             <td><%= contact.phone %></td>
               <td><%= contact.message %></td>
-        <td><%= link_to 'Show', contact %>
-        <%= link_to 'Edit', edit_contact_path(contact) %>
-        <%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <td><%= link_to ('<span class="glyphicon glyphicon-trash"> </span>').html_safe,  contact, method: :delete, confirm: "Are you sure that you wish to delete #{contact.name}?" %></td>
       </tr>
     <% end %>
   </tbody>
