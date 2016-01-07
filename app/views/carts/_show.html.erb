@@ -24,11 +24,12 @@
 <td><%= item.sticker.name %></td>
 
  <td class="item_price"><%= number_to_currency(item.unit_price) %></td>
-      <%= form_for item, :url => lineitem_path(item), :method => :put, remote:true do |f| %>
+      <%= form_for item, :url => lineitem_path(item),  remote:true do |f| %>
       <td class="a-center movewishlist"><%= f.number_field :quantity, maxlength: "12", id: "cart-qty", class: "input-text qty", title: "Qty", size: '5', min: '1', max: '99', data: { item_id: item.id } %>
+       <%#= f.hidden_field :sticker_id, value: item.id %>
       <%= f.submit '+add' %>
      
-                      
+        <%#= item.quantity %>              
   <% end %> </td> 
 
 <td colspan="2"><%= number_to_currency(item.total_price) %>
