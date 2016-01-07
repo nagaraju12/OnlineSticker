@@ -23,7 +23,7 @@
 
 <% if current_user.present? %>
 
- Member:<%=link_to current_user.role,"#",class:"glyphicon glyphicon-user" %>
+ <%=link_to current_user.name,"#",class:"glyphicon glyphicon-user" %>
 <%= link_to ('<span class="glyphicon glyphicon-off"></span>').html_safe, destroy_user_session_path, :method => :delete %>
 
  <% elsif current_user and current_user.role == 'admin' %>
