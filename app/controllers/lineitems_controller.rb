@@ -1,5 +1,5 @@
 class LineitemsController < ApplicationController
-  before_action :set_lineitem, only: [:show, :edit, :update, :destroy]
+  before_action :set_lineitem, only: [:show, :edit,:update,  :destroy]
 
     def index
     @lineitems = Lineitem.all
@@ -40,7 +40,7 @@ end
   
   def update
 
-    @lineitem.quantity = params[:item][:quantity]
+    @lineitem.quantity =params([:item][:quantity])
     respond_to do |format|
       if @lineitem.update(lineitem_params)
         format.html { redirect_to @lineitem, notice: 'Line item was successfully updated.' }

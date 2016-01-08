@@ -23,9 +23,13 @@
 
 <% if current_user.present? %>
 
- Member:<%=link_to current_user.role,"#",class:"glyphicon glyphicon-user" %>
+ <%=link_to current_user.name,"#",class:"glyphicon glyphicon-user" %>
 <%= link_to ('<span class="glyphicon glyphicon-off"></span>').html_safe, destroy_user_session_path, :method => :delete %>
-
+<%= form_tag stores_path, :id => 'dropdown', :method => :get do %>
+ <%= select_tag :category, options_for_select([["Stickers",""]]+Category.all.map{|a| a.name}), :style => "border: 1px solid green;" ,class: "btn btn-primary" %>
+<% end %>
+<%= link_to ("Carts (#{
+current_cart.lineitems.count})<span class='glyphicon glyphicon-shopping-cart'> </span>").html_safe,cart_path(current_cart) %>
  <% elsif current_user and current_user.role == 'admin' %>
 
 <% else %>
@@ -44,7 +48,9 @@ current_cart.lineitems.count})<span class='glyphicon glyphicon-shopping-cart'> <
 
 <div class="center">
 <%=  form_tag stores_path(), :method => 'get' do %>
-    <%= text_field_tag :search, params[:search],placeholder: "Search Items", class:"btn btn-default" %><%= submit_tag "Search",class:"btn btn-warning"  %>  
+    <div class="inner-addon float: left;">
+<i class="glyphicon glyphicon-search"></i>
+    <%= text_field_tag :search, params[:search],placeholder: "Search Items", class:"btn btn-default" %><%= submit_tag "Search",class:"btn btn-warning"  %> 
 <% end %>
 </div>
 

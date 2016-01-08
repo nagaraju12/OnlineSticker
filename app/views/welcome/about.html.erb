@@ -1,18 +1,12 @@
+<div class="text-right">
+<h4><%= link_to ('<span class="glyphicon glyphicon-remove"> </span> ' ).html_safe, root_path %></h4>
 
-<div id= "footer" >
-
+<%#= button_to "Back" , dashboards_index_path, :method => "get" %>
+</div>
 <%= render :partial => '/layouts/footer' %>
- 
-</footer>
+
 <style>
-#footer {
-    clear: both;
-    height: 500px;
-    color:#ccc;
-    font-size:17px;
-    position:relative;
-    z-index: 19;
-    margin-top: -2em;
-    background-color:#31353a;
+   div.text-right{
+     float: right;
 }
-</style>
+  </style>
