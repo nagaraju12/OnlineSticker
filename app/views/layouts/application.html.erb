@@ -48,7 +48,9 @@ current_cart.lineitems.count})<span class='glyphicon glyphicon-shopping-cart'> <
 
 <div class="center">
 <%=  form_tag stores_path(), :method => 'get' do %>
-    <%= text_field_tag :search, params[:search],placeholder: "Search Items", class:"btn btn-default" %><%= submit_tag "Search",class:"btn btn-warning"  %>  
+    <div class="inner-addon float: left;">
+<i class="glyphicon glyphicon-search"></i>
+    <%= text_field_tag :search, params[:search],placeholder: "Search Items", class:"btn btn-default" %><%= submit_tag "Search",class:"btn btn-warning"  %> 
 <% end %>
 </div>
 
