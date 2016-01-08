@@ -1,9 +1,10 @@
+
  <ul class="bxslider1" i>
 <% @stickers.each do |i| %>
 
 <% for image in i.images %>
 
-<li><%=link_to  image_tag(image.image.url, :height => 180, :width => 200),  store_path(i.id) %>
+<li><%=link_to  image_tag(image.image.url, :height => 180, :width => 200 ),  store_path(i.id) %>
 <%= link_to i.name, store_path(i.id) %><br>
 $<%= i.price %><br>
 <div class="floating"><%= button_to 'Add to Cart', lineitems_path(sticker_id: i),class: "btn btn-warning btn-sm"  %></div>
@@ -17,10 +18,11 @@ $<%= i.price %><br>
 
 
 $('.bxslider1').bxSlider({
-   slideWidth: 300,
+   slideWidth:300,
     minSlides: 2,
     maxSlides: 4,
     startSlide: 2,
+
     pager: false,
     auto: true,
 autoHover: true
@@ -30,7 +32,7 @@ autoHover: true
 <style>
 .floating {
 	display:inline-block;
-                  margin: 10px;
+                  margin: 4px;
                   }
 
                  </style>

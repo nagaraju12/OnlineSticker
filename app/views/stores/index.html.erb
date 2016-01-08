@@ -6,7 +6,7 @@
 <% @stickers.each do |sticker| %>
 <% cache ['entry', sticker] do %>
 <div class="entry">
-<div class="col-sm-1 col-md-3">
+<div class="col-sm-1 col-md-2">
 <div class="tumbnail">
 
 <% sticker.images.each do |i| %>
@@ -18,7 +18,7 @@
 <span class="price"><%= number_to_currency(sticker.price) %></span><br>
 
 <td><div class="floating"><%= button_to 'Add to Cart', lineitems_path(sticker_id: sticker),class: "btn btn-success"  %></div>
-<div class="floating"><%= link_to 'More Info',store_path(i.id),class: "btn btn-warning btn-sm" %></div>
+<div class="floating"><%= link_to 'More Info',store_path(i.id),class: "btn btn-success" %></div>
 </td>
 <%#= button_to 'Delete Cart', stores , method: :delete, data: { confirm: 'Are you sure?' }  %>
 </div>
@@ -29,9 +29,23 @@
 <% end %>
 <% end %>
 <style>
+input[type="submit"] {
+  background-color:#555555;
+  border:1px solid #212121;
+  font-size:13px;
+  margin:0;
+  padding:3px 20px;
+  text-shadow:#344808 -1px -1px 0;
+  width:99px;
+}
+
+a input {
+  text-decoration:none;
+}
+
 .floating {
     display:inline-block;
-                  margin: 10px;
+                  margin: 0px;
                   }
 
 
