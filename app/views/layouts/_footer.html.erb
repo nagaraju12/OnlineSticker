@@ -8,11 +8,12 @@
 
   <div class="content">
     <div class="commonrow">
-      <%#= link_to image_tag("/assets/touchsecure-logo.jpg", :id => "logo"), '/' %>
-         
+      <div class="image" >
+<%= link_to image_tag("onlinesticker.png", alt: "File Name Fancy", size: "2150*2150"), root_path %>
     </div>
     <div class="commonrow">
       <div class="aboutusBox">
+      <div class="text">
         <h2><span>About Us</span></h2>
         <p>Onlinesticker is a e-commerce platform to "Discover Unique Hand crafted Products" including Handmade, Vintage, Ethnic, Organic,IT and Natural products. 
 <br><br>
@@ -28,21 +29,16 @@ Experience the exquisite craftsmanship from the new age of entrepreneurs. We sin
       </ul>
     </div>
     <div class="menu-footer">
-      <ul>
-       <td>
+     <div class="text">
           <h4>Information</h4>
-          <ul>
 
            <td><%= link_to "About Us", about_path %></td><br>
            <td><%= link_to "Delivery Information", root_path %></td><br>
            <td><%= link_to "Privacy Policy", root_path %></td><br>
            <td><%= link_to "Terms & Conditions", root_path %></td><br>
            <td><%= link_to "Legal Disclaimer", root_path %></td><br>
-          </ul>
-        </td>
-       
-    
-      </ul>
+          
+      </div>
     </div>
    <div class="text-center">
       Copyright © 2016 Onlinesticker. All rights reserved.
@@ -54,12 +50,14 @@ Experience the exquisite craftsmanship from the new age of entrepreneurs. We sin
 <style>
 #footer {
     clear: both;
-    height: 410px;
+    height: 420px;
     color:#ccc;
     font-size:12px;
     position:relative;
     z-index: 10;
     margin-top: -3em;
+    margin-right: -5.3em;
+    margin-left: -5.2em;
     background-color:#31353a;
 }
 </style>
@@ -67,4 +65,16 @@ Experience the exquisite craftsmanship from the new age of entrepreneurs. We sin
    div.text-center{
      float: center;
 }
+div.text{
+     margin-left: 75px;
+     margin-right: 75px;
+     margin-bottom: 10px;
+     
+}
+
+div.image{
+  padding-top: 30px;
+     margin-left: 70px;
+}
+
   </style>
