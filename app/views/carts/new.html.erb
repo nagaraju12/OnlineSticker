@@ -1,15 +1,10 @@
-<div class="text-right">
-<%#= button_to "Back" , dashboards_index_path, :method => "get" %>
-<h1> <div class="floating"><%= button_to "<-Continue Shoping" ,stores_path, :method => "get",class: "btn btn-success" %></div></h1>
-</div>
-<style>
-   div.text-right{
-     float: right;
-}
-  </style>
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
+<div class="text-right">
+
+<h1> <div class="floating"><%= button_to "Continue Shoping" ,stores_path, :method => "get",class: "btn btn-success" %></div></h1>
+</div>
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
@@ -18,10 +13,14 @@
       <th>Price</th> 
       <th>Quantity</th>
       <th>SubTotal</th>
-      <th>GrandTotal</th>
+      <th>Estimated Total</th>
       <th colspan="3"></th>
     </tr>
   </thead>
   <%= image_tag("images14.jpg", alt: "Fancy", size: "2150*2150")%> </table>
-
+<style>
+   div.text-right{
+     float: right;
+}
+  </style>
  

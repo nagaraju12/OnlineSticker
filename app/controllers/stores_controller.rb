@@ -1,8 +1,10 @@
 class StoresController < ApplicationController
 	
-def index
+	def index
 	if params[:category].blank?
-@stickers=Sticker.order("created_at ASC")
+
+@stickers = Sticker.search(params[:search]).paginate(:page => params[:page], :per_page => 20).order("created_at DESC ")
+
 	@banners= Banner.all
 	@contacts= Contact.all
 	@lineitems = Lineitem.all
@@ -17,8 +19,11 @@ def show
 	   #@cart = current_cart
 # @item = Lineitem.find(params[:id])
 @sticker = Sticker.find(params[:id])
+
 end
+
    def sticker_params
     params.require(:sticker).permit!
   end
+
 end

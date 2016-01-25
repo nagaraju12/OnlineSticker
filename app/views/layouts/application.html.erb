@@ -28,30 +28,36 @@
 <%= form_tag stores_path, :id => 'dropdown', :method => :get do %>
  <%= select_tag :category, options_for_select([["Stickers",""]]+Category.all.map{|a| a.name}), :style => "border: 1px solid green;" ,class: "btn btn-primary" %>
 <% end %>
-<%= link_to ("Carts (#{
-current_cart.lineitems.count})<span class='glyphicon glyphicon-shopping-cart'> </span>").html_safe,cart_path(current_cart) %>
+
+<%= link_to ("Carts (#{current_cart.lineitems.count})<span class='glyphicon glyphicon-shopping-cart'> </span>").html_safe,cart_path(current_cart) %>
+
  <% elsif current_user and current_user.role == 'admin' %>
 
 <% else %>
+
 <%= form_tag stores_path, :id => 'dropdown', :method => :get do %>
  <%= select_tag :category, options_for_select([["Stickers",""]]+Category.all.map{|a| a.name}), :style => "border: 1px solid green;" ,class: "btn btn-primary" %>
+
 <% end %>
 
 
 <%= link_to ("Carts (#{
-current_cart.lineitems.count})<span class='glyphicon glyphicon-shopping-cart'> </span>").html_safe,cart_path(current_cart) %>
+current_cart.lineitems.count})<span class='glyphicon glyphicon-shopping-cart'> </span>").html_safe,cart_path(current_cart)%><%#= link_to number_to_currency(@cart.total_price),"#" %>
+
 <%= link_to ('<span class="glyphicon glyphicon-user"> </span> Sign in / Sign up ' ).html_safe, new_user_session_path(current_user)  %>
 <%#= link_to ('<span class="glyphicon glyphicon-folder-open"> </span> ').html_safe,  new_user_registration_path(:role => "buyer") %>
+
 <% end %>
+
 </div>
-  
 
 <div class="center">
-<%=  form_tag stores_path(), :method => 'get' do %>
-    <div class="inner-addon float: left;">
+   <%= form_tag stores_path, :method => 'get',:id => "products_search" do %>    <div class="inner-addon float: left;">
 <i class="glyphicon glyphicon-search"></i>
-    <%= text_field_tag :search, params[:search],placeholder: "Search Items", class:"btn btn-default" %><%= submit_tag "Search",class:"btn btn-warning"  %> 
+    <%= text_field_tag :search, params[:search],placeholder: "Search Items", class:"btn btn-default" %><%= submit_tag "Search", :name => nil,class:"btn btn-warning" %> 
 <% end %>
+  
+
 </div>
 
 </nav>

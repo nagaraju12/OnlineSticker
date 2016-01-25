@@ -9,16 +9,15 @@
   <nav id ="nav">
  </div> 
 
-<div id= "page_nav" >
-     
-</div>
-
-                     
+<div id= "page_nav" >  
+</div>                    
 <div id= "sign_in" >
 <% if current_user.present? %>
+
 <%#= link_to 'Account', edit_user_registration_path %>
 
  <% elsif current_user and current_user.role == 'admin' %>
+
 <% else %>
 <%= link_to 'Sign in', new_user_session_path  %>
 <%= link_to "Sign up",  new_user_registration_path(:role => "bayer") %>
