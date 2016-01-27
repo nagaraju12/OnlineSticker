@@ -2,9 +2,7 @@ class StoresController < ApplicationController
 	
 	def index
 	if params[:category].blank?
-
 @stickers = Sticker.search(params[:search]).paginate(:page => params[:page], :per_page => 20).order("created_at DESC ")
-
 	@banners= Banner.all
 	@contacts= Contact.all
 	@lineitems = Lineitem.all
